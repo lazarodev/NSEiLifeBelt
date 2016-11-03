@@ -26,12 +26,12 @@ public class NSEActivity extends TabStepper {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        boolean linear = getIntent().getBooleanExtra("linear", false);
+
         setErrorTimeout(1500);
-        setLinear(false);
-        setTitle("Tab Stepper <small>(Classic Tab) </small>");
-        setAlternativeTab(false);
-        setDisabledTouch();
-        setPreviousVisible();
+        setLinear(linear);
+        setTitle("Tab Stepper <small>(" + (linear ? "" : "Non ") + "Linear)</small>");
+        setAlternativeTab(true);
 
         addStep(createFragment(new RoomFragment()));
         addStep(createFragment(new BathFragment()));
