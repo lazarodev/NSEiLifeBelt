@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">NSE iLifeBelt</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    // Questions and description for the fragments
+    <string name="room_question">¿Cuál es el totla de cuartos, piezas o habitaciones con que cuenta en su hogar?</string>
+    <string name="room_description">Por favor no incluya baños, medios banos, pasillos patios y zotehuelas</string>
+    <string name="bat_question">¿Cuántos baños completos con regadera y W.C (excusado) hay para uso exclusivo de los integrantes de su hogar?</string>
+    <string name="wateringcan_question">¿En su hogar cuenta con regadera funcionando en alguno de los baños</string>
+    <string name="spotlight_question">¿Cuántos focos tiene su vivienda?</string>
+    <string name="spotlight_description">Contando todos los focos que utiliza para iluminar su hogar, incluyendo los de techos, paredes y lámparas de buró o piso.</string>
+    <string name="floor_question">¿El piso de su hogar es predominante de tierra, o de cemento, o de algún otro tipo de acabado?</string>
+    <string name="cars_question">¿Cuántos automóviles propios, excluyendo taxis, tiene en su hogar?</string>
+    <string name="stove_question">¿En este hogar cuenta con estufa de gas o eléctrica?</string>
+    <string name="studiy_question">¿Cuál fue el último año de estudios que completó? ¿Realizó otros estudios?</string>
+    <string name="study_description">Pensando en la persona qeu aporta la mayor parte del ingreso en este hogar</string>
+
+    // Text for the array in StudyFragment
+    <string name="no_study">No estudio</string>
+    <string name="primary_incomplete">Primaria incompleta</string>
+    <string name="primary_completed">Primaria completa</string>
+    <string name="secundary_incomplete">Secundaria incompleta</string>
+    <string name="secundary_completed">Secundaria completa</string>
+    <string name="commercial_carrer">Carrera comercial</string>
+    <string name="technic_carrer">Carrera técnica</string>
+    <string name="bachellor_incomplete">Preparatoria incompleta</string>
+    <string name="bachello_completed">Preparatoria completa</string>
+    <string name="licenciatura_incomplete">Licenciatura incompleta</string>
+    <string name="licenciatura_completed">Licenciatura completa</string>
+    <string name="diploma_master">Diplomado o maestría</string>
+    <string name="doctor">Doctorado</string>
+</resources>
