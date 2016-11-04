@@ -26,8 +26,6 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
 
     private ListView lvStudy;
     private ArrayList<Study> categoria = new ArrayList<>();
-
-    int studyContador = 0;
     String getResult, varStudy;
 
     public static final String TAG = "**NSE**";
@@ -40,7 +38,8 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
         this.varStudy = varStudy;
     }
 
-    int finalCount;
+    int valorRoom, valueBath, valueSpot, valueStove, valueCars, valueFloor, valueWater, valueStudy, finalCount;
+    public static int study;
 
     @Nullable
     @Override
@@ -69,14 +68,6 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
         lvStudy.setAdapter(adapter);
         lvStudy.setOnItemClickListener(this);
 
-        studyContador++;
-
-        int value = 20 + studyContador;
-
-        String result = String.valueOf(value);
-
-        //Log.d("**FINAL_RESULT**", result);
-
         return v;
     }
 
@@ -88,34 +79,88 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        switch (position) {
+            case 0:
+                study = 0;
+                break;
+            case 1:
+                study = 0;
+                break;
+            case 2:
+                study = 22;
+                break;
+            case 3:
+                study = 22;
+                break;
+            case 4:
+                study = 22;
+                break;
+            case 5:
+                study = 38;
+                break;
+            case 6:
+                study = 38;
+                break;
+            case 7:
+                study = 38;
+                break;
+            case 8:
+                study = 38;
+                break;
+            case 9:
+                study = 52;
+                break;
+            case 10:
+                study = 52;
+                break;
+            case 11:
+                study = 72;
+                break;
+            case 12:
+                study = 72;
+                break;
+        }
     }
 
     public void studyValor() {
 
-        //int valorRoom = 240;
-        //String finalResult = String.valueOf(valorRoom);
-        //Log.d("**ROOM_FRAGMENT**", finalResult);
-
-        RoomFragment roomFragment = new RoomFragment();
-        roomFragment.setValue1();
-        int valorRoom = roomFragment.getVarRoom();
+        valorRoom = RoomFragment.room;
         String roomString = String.valueOf(valorRoom);
         Log.d("**ROOM_FRAGMENT**", roomString);
 
-        BathFragment bathFragment = new BathFragment();
-        bathFragment.bathValor();
-        int valorBath = bathFragment.getVarBath();
-        String bathString = String.valueOf(valorBath);
+        valueBath = BathFragment.bath;
+        String bathString = String.valueOf(valueBath);
         Log.d("**BATH_FRAGMENT**", bathString);
 
-        WateringCanFragment wateringCanFragment = new WateringCanFragment();
-        wateringCanFragment.waterValor();
-        int valorWater = wateringCanFragment.getVarWater();
-        String waterString = String.valueOf(valorWater);
-        Log.d("**WATER_FRAGMENT", waterString);
+        valueWater = WateringCanFragment.watering;
+        String waterString = String.valueOf(valueWater);
+        Log.d("**WATER_FRAGMENT**", waterString);
 
-        finalCount = valorRoom + valorBath + valorWater;
+
+        valueSpot = SpotlightFragment.spotligth;
+        String spotString = String.valueOf(valueSpot);
+        Log.d("**SPOT_FRAGMENT**", spotString);
+
+        valueCars = CarsFragment.cars;
+        String carsString = String.valueOf(valueCars);
+        Log.d("**CARS_FRAGMENT", carsString);
+
+        valueStove = StoveFragment.stove;
+        String stoveString = String.valueOf(valueStove);
+        Log.d("**STOVE_FRAGMENT**", stoveString);
+
+        valueFloor = FloorFragment.floor;
+        String floorString = String.valueOf(valueFloor);
+        Log.d("**FLOOR_FRAGMENT**", floorString);
+
+        valueStudy = StudyFragment.study;
+        String studyString = String.valueOf(valueStudy);
+        Log.d("**STUDY_FRAGMENT**", studyString);
+
+        finalCount = valorRoom + valueBath + valueWater + valueSpot + valueStove + valueCars + valueFloor + valueStudy;
         //this.varStudy = finalCount;
+        String sumatorio = String.valueOf(finalCount);
+        Log.d("**SUMATORIA_TOTAL**", sumatorio);
 
         if (finalCount <= 60) {
             Log.d(TAG, "E");

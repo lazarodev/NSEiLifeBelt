@@ -25,49 +25,47 @@
         android:orientation="horizontal">
 
         <Button
-            android:textStyle="italic"
+            android:id="@+id/btn_00_bath"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="italic" />
 
         <Button
+            android:id="@+id/btn_01_bath"
             android:layout_width="wrap_content"
-            android:textStyle="italic"
             android:layout_height="wrap_content"
             android:text="1"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="italic" />
 
         <Button
+            android:id="@+id/btn_02_bath"
             android:layout_width="wrap_content"
-            android:textStyle="italic"
             android:layout_height="wrap_content"
             android:text="2"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="italic" />
 
         <Button
+            android:id="@+id/btn_03_bath"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
             android:text="3"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="italic" />
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_04_bath"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:textStyle="italic"
         android:layout_marginTop="10dp"
         android:text="4 o más"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/tv_test"
-        android:textStyle="italic"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp" />
+        android:textSize="20sp"
+        android:textStyle="italic" />
 
 </LinearLayout>

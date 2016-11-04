@@ -1,13 +1,14 @@
 package com.gt.dev.ilifebelt.nseilifebelt.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.BathFragment;
+import com.gt.dev.ilifebelt.nseilifebelt.fragments.CarsFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.FloorFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.RoomFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.SpotlightFragment;
@@ -18,7 +19,6 @@ import com.gt.dev.ilifebelt.nseilifebelt.fragments.WateringCanFragment;
 public class NSEActivity extends TabStepper {
 
     private int i = 1;
-    public int room, bath, floor, spotlight, stov, study, watering;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class NSEActivity extends TabStepper {
         addStep(createFragment(new BathFragment()));
         addStep(createFragment(new WateringCanFragment()));
         addStep(createFragment(new SpotlightFragment()));
+        addStep(createFragment(new CarsFragment()));
         addStep(createFragment(new StoveFragment()));
         addStep(createFragment(new FloorFragment()));
         addStep(createFragment(new StudyFragment()));
@@ -63,7 +64,9 @@ public class NSEActivity extends TabStepper {
         String valorStudy = studyFragment.getVarStudy();
         //String finalResult = String.valueOf(valorStudy);
         Log.d("FINAL RESULT", valorStudy);
-        finish();
+        Bundle bundle = new Bundle();
+        bundle.putString("result_nse", valorStudy);
+        startActivity(new Intent(NSEActivity.this, ResultActivity.class).putExtras(bundle));
     }
 
 }

@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
@@ -13,23 +14,21 @@ import com.gt.dev.ilifebelt.nseilifebelt.R;
  * Created by Community on 27/10/16.
  */
 
-public class WateringCanFragment extends AbstractStep{
+public class WateringCanFragment extends AbstractStep implements View.OnClickListener {
 
-    int varWater;
-
-    public int getVarWater() {
-        return varWater;
-    }
-
-    public void setVarWater(int varWater) {
-        this.varWater = varWater;
-    }
-
+    public static int watering;
+    private Button btnYes, btnNo;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.wateringcan_fragment, container, false);
+
+        btnYes = (Button) v.findViewById(R.id.btn_yes_water);
+        btnNo = (Button) v.findViewById(R.id.btn_no_water);
+
+        btnYes.setOnClickListener(this);
+        btnNo.setOnClickListener(this);
         return v;
     }
 
@@ -39,7 +38,15 @@ public class WateringCanFragment extends AbstractStep{
         return text;
     }
 
-    public void waterValor(){
-        this.varWater = 3;
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_yes_water:
+                watering = 10;
+                break;
+            case R.id.btn_no_water:
+                watering = 0;
+                break;
+        }
     }
 }

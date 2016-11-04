@@ -18,15 +18,8 @@ import com.gt.dev.ilifebelt.nseilifebelt.activity.NSEActivity;
 public class RoomFragment extends AbstractStep implements View.OnClickListener {
 
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
-    int varRoom, piBot;
 
-    public int getVarRoom() {
-        return varRoom;
-    }
-
-    public void setVarRoom(int varRoom) {
-        this.varRoom = varRoom;
-    }
+    public static int room;
 
     @Nullable
     @Override
@@ -67,35 +60,27 @@ public class RoomFragment extends AbstractStep implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_01_room:
-                varRoom = setValue1(1);
+                onNext();
+                room = 0;
                 break;
             case R.id.btn_02_room:
-                varRoom = setValue1(1);
+                room = 0;
                 break;
             case R.id.btn_03_room:
-                varRoom = setValue1(1);
+                room = 0;
                 break;
             case R.id.btn_04_room:
-                varRoom = setValue1(1);
+                room = 0;
                 break;
             case R.id.btn_05_room:
-                varRoom = setValue1(1);
+                room = 8;
                 break;
             case R.id.btn_06_room:
-                varRoom = setValue1(1);
+                room = 8;
                 break;
             case R.id.btn_07_room:
-                varRoom = setValue1(1);
+                room = 14;
                 break;
         }
-    }
-
-    public void llegaValor() {
-        //this.varRoom = setValue1(3);
-    }
-
-    public int setValue1(int l) {
-        //this.varRo
-        return l;
     }
 }

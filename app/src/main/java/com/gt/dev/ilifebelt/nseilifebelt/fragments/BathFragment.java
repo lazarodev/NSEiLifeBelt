@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
@@ -15,31 +16,25 @@ import com.gt.dev.ilifebelt.nseilifebelt.R;
  * Created by Community on 27/10/16.
  */
 
-public class BathFragment extends AbstractStep {
+public class BathFragment extends AbstractStep implements View.OnClickListener {
 
-    private TextView tvTest;
-
-    public int getVarBath() {
-        return varBath;
-    }
-
-    public void setVarBath(int varBath) {
-        this.varBath = varBath;
-    }
-
-    int varBath, contador, sendValue;
+    public static int bath;
+    private Button btn1, btn2, btn3, btn4;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.bath_fragment, container, false);
-        tvTest = (TextView) v.findViewById(R.id.tv_test);
 
-        //contador = 2;
+        btn1 = (Button) v.findViewById(R.id.btn_00_bath);
+        btn2 = (Button) v.findViewById(R.id.btn_01_bath);
+        btn3 = (Button) v.findViewById(R.id.btn_03_bath);
+        btn4 = (Button) v.findViewById(R.id.btn_04_bath);
 
-        //sendValue = varBath + contador;
-        //String mensaje = String.valueOf(sendValue);
-        //Log.d("BATH FRAGMENT", mensaje);
+        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        btn4.setOnClickListener(this);
 
         return v;
     }
@@ -50,11 +45,24 @@ public class BathFragment extends AbstractStep {
         return banos;
     }
 
-    public void bathValor() {
-        varBath = 3;
-    }
-
-    public void b_updateText(String t) {
-        tvTest.setText(t);
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_00_bath:
+                bath = 0;
+                break;
+            case R.id.btn_01_bath:
+                bath = 16;
+                break;
+            case R.id.btn_02_bath:
+                bath = 36;
+                break;
+            case R.id.btn_03_bath:
+                bath = 36;
+                break;
+            case R.id.btn_04_bath:
+                bath = 52;
+                break;
+        }
     }
 }

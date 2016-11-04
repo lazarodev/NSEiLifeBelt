@@ -16,6 +16,7 @@
         android:textStyle="bold" />
 
     <Button
+        android:id="@+id/btn_no_floor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -26,6 +27,7 @@
         android:textStyle="italic" />
 
     <Button
+        android:id="@+id/btn_yes_floor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
