@@ -97,7 +97,7 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
         //Log.d("**ROOM_FRAGMENT**", finalResult);
 
         RoomFragment roomFragment = new RoomFragment();
-        roomFragment.llegaValor();
+        roomFragment.setValue1();
         int valorRoom = roomFragment.getVarRoom();
         String roomString = String.valueOf(valorRoom);
         Log.d("**ROOM_FRAGMENT**", roomString);

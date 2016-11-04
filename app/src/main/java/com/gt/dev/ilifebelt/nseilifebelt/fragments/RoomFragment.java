@@ -67,24 +67,35 @@ public class RoomFragment extends AbstractStep implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_01_room:
-                this.varRoom = 1;
+                varRoom = setValue1(1);
                 break;
             case R.id.btn_02_room:
+                varRoom = setValue1(1);
                 break;
             case R.id.btn_03_room:
+                varRoom = setValue1(1);
                 break;
             case R.id.btn_04_room:
+                varRoom = setValue1(1);
                 break;
             case R.id.btn_05_room:
+                varRoom = setValue1(1);
                 break;
             case R.id.btn_06_room:
+                varRoom = setValue1(1);
                 break;
             case R.id.btn_07_room:
+                varRoom = setValue1(1);
                 break;
         }
     }
 
     public void llegaValor() {
-        varRoom = piBot;
+        //this.varRoom = setValue1(3);
+    }
+
+    public int setValue1(int l) {
+        //this.varRo
+        return l;
     }
 }
