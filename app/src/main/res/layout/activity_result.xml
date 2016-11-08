@@ -43,8 +43,29 @@
             android:id="@+id/tv_more_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="text"
             android:textSize="20sp"
             android:textStyle="italic" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_cancel_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:text="Cancelar" />
+
+
+            <Button
+                android:id="@+id/btn_save_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:text="Guardar" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>

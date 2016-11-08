@@ -26,19 +26,6 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
 
     private ListView lvStudy;
     private ArrayList<Study> categoria = new ArrayList<>();
-    String getResult, varStudy;
-
-    public static final String TAG = "**NSE**";
-
-    public String getVarStudy() {
-        return varStudy;
-    }
-
-    public void setVarStudy(String varStudy) {
-        this.varStudy = varStudy;
-    }
-
-    int valorRoom, valueBath, valueSpot, valueStove, valueCars, valueFloor, valueWater, valueStudy, finalCount;
     public static int study;
 
     @Nullable
@@ -121,68 +108,4 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
                 break;
         }
     }
-
-    public void studyValor() {
-
-        valorRoom = RoomFragment.room;
-        String roomString = String.valueOf(valorRoom);
-        Log.d("**ROOM_FRAGMENT**", roomString);
-
-        valueBath = BathFragment.bath;
-        String bathString = String.valueOf(valueBath);
-        Log.d("**BATH_FRAGMENT**", bathString);
-
-        valueWater = WateringCanFragment.watering;
-        String waterString = String.valueOf(valueWater);
-        Log.d("**WATER_FRAGMENT**", waterString);
-
-
-        valueSpot = SpotlightFragment.spotligth;
-        String spotString = String.valueOf(valueSpot);
-        Log.d("**SPOT_FRAGMENT**", spotString);
-
-        valueCars = CarsFragment.cars;
-        String carsString = String.valueOf(valueCars);
-        Log.d("**CARS_FRAGMENT", carsString);
-
-        valueStove = StoveFragment.stove;
-        String stoveString = String.valueOf(valueStove);
-        Log.d("**STOVE_FRAGMENT**", stoveString);
-
-        valueFloor = FloorFragment.floor;
-        String floorString = String.valueOf(valueFloor);
-        Log.d("**FLOOR_FRAGMENT**", floorString);
-
-        valueStudy = StudyFragment.study;
-        String studyString = String.valueOf(valueStudy);
-        Log.d("**STUDY_FRAGMENT**", studyString);
-
-        finalCount = valorRoom + valueBath + valueWater + valueSpot + valueStove + valueCars + valueFloor + valueStudy;
-        //this.varStudy = finalCount;
-        String sumatorio = String.valueOf(finalCount);
-        Log.d("**SUMATORIA_TOTAL**", sumatorio);
-
-        if (finalCount <= 60) {
-            Log.d(TAG, "E");
-            getResult = "E";
-        } else if (finalCount >= 61 && finalCount <= 101) {
-            Log.d(TAG, "D");
-            getResult = "D";
-        } else if (finalCount >= 102 && finalCount <= 156) {
-            Log.d(TAG, "D+");
-            getResult = "D+";
-        } else if (finalCount >= 157 && finalCount <= 191) {
-            Log.d(TAG, "C");
-            getResult = "C";
-        } else if (finalCount >= 192 && finalCount <= 241) {
-            Log.d(TAG, "C+");
-            getResult = "C+";
-        } else if (finalCount >= 242) {
-            Log.d(TAG, "A/B");
-            getResult = "A/B";
-        }
-
-        this.varStudy = getResult;
-    }
-
 }

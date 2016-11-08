@@ -11,16 +11,17 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="AA_DB_NAME"
-            android:value="mydatabase.db" />
+            android:value="MyDatabase.db" />
         <meta-data
             android:name="AA_DB_VERSION"
-            android:value="5" />
+            android:value="1" />
         <meta-data
             android:name="AA_MODELS"
-            android:value="net.simplifiedcoding.activeandroid.Inventory" />
+            android:value="com.gt.dev.ilifebelt.nseilifebelt.model.Results, com.gt.dev.ilifebelt.nseilifebelt.Item" />
 
         <activity
             android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,12 +33,16 @@
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.AboutActivity" />
         <activity
             android:name=".activity.NSEActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.ChartsActivity" />
         <activity android:name=".activity.ResultActivity" />
+        <activity android:name=".activity.LibraryActivity" />
+        <activity
+            android:name=".activity.AboutActivity"
+            android:label="@string/title_activity_about"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

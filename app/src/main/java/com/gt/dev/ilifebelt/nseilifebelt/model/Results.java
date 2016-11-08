@@ -7,11 +7,14 @@ import com.activeandroid.annotation.Table;
 /**
  * Created by Community on 26/10/16.
  */
-@Table(name = "Results")
+@Table(name = "Result")
 public class Results extends Model {
-
-    //The table consist only one field name
     @Column(name = "name")
     public String name;
 
+    /*@Column(name = "email")
+    public String email;
+
+    @Column(name = "nse")
+    public String nse;*/
 }

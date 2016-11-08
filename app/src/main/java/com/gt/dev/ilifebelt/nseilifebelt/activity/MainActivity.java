@@ -75,11 +75,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, NSEActivity.class));
                 break;
             case 2:
-                startActivity(new Intent(MainActivity.this, ResultActivity.class));
+                startActivity(new Intent(MainActivity.this, LibraryActivity.class));
                 break;
             case 3:
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
                 break;
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }
