@@ -33,7 +33,7 @@ public class NSEActivity extends TabStepper {
 
         setErrorTimeout(1500);
         setLinear(linear);
-        setTitle("Tab Stepper <small>(" + (linear ? "" : "Non ") + "Linear)</small>");
+        setTitle("Encuestador");
         setAlternativeTab(true);
 
         ActiveAndroid.initialize(getApplication());
@@ -46,7 +46,7 @@ public class NSEActivity extends TabStepper {
         addStep(createFragment(new StoveFragment()));
         addStep(createFragment(new FloorFragment()));
         addStep(createFragment(new StudyFragment()));
-        addStep(createFragment(new InfoUserFragment()));
+        //addStep(createFragment(new InfoUserFragment()));
 
         super.onCreate(savedInstanceState);
     }
@@ -69,17 +69,11 @@ public class NSEActivity extends TabStepper {
         InfoUserFragment infoUserFragment = new InfoUserFragment();
         infoUserFragment.finalValue();
         String finalString = infoUserFragment.getVarFinal();
-        infoUserFragment.theName();
-        String theName = infoUserFragment.getName();
-        infoUserFragment.theEmail();
-        String theEmail = infoUserFragment.getEmail();
 
         //String finalResult = String.valueOf(valorStudy);
         Log.d("FINAL RESULT", finalString);
         Bundle bundle = new Bundle();
         bundle.putString("result_nse", finalString);
-        bundle.putString("result_name", theName);
-        bundle.putString("result_email", theEmail);
         startActivity(new Intent(NSEActivity.this, ResultActivity.class).putExtras(bundle));
     }
 

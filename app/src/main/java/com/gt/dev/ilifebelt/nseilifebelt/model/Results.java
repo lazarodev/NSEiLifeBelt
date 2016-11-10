@@ -12,9 +12,9 @@ public class Results extends Model {
     @Column(name = "name")
     public String name;
 
-    /*@Column(name = "email")
+    @Column(name = "email")
     public String email;
 
     @Column(name = "nse")
-    public String nse;*/
+    public String nse;
 }

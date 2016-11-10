@@ -45,6 +45,50 @@
         al uso de Internet y Medios Digitales en Centroamérica para buscar consensos y acuerdos que contribuyan a la
         edificación de sociedades y estados equitativos, democráticos y prósperos.</string>
     <string name="title_activity_about">AboutActivity</string>
+
+    //NSE meanings
+    <string name="ab_nse_text">Es el segmento con el más alto nivel de vida del país. Este segmento
+        tiene cubierta todas las necesidades de bienestar y es el único nivel que cuenta con recursos
+        para invertir y planear para el futuro. Actualmente representa el 3.9 porciento de los hogares del
+        país y el 6.4 porciento de los hogares en localidades mayores de 100 mil habitantes.</string>
+
+    <string name="cplus_nse_text">Es el segundo grupo con el más alto nivel de vida del país. Al
+        igual que el segmento anterior, este tiene cubiertas todas las necesidades de calidad de
+        vida, sin embargo tiene ciertas limitantes para invertir y ahorrar para el futuro. Actualmente
+        representa el 9.3 porciento de los hogares del país y el 14.1 porciento de los hogares ubicados en localidades
+        mayores de 100 mil habitantes del país.</string>
+
+    <string name="c_nse_text">Este segmento se caracteriza por haber alcanzado un nivel de vida
+        práctica y con ciertas comodidades. Cuenta con una infraestructura básica en entretenimiento
+        y tecnología. Actualmente este grupo representa el 10.7 porciento de los hogares totales del país y
+        el 15.5 porciento de los hogares en localidades mayores de 100 mil habitantes del país.</string>
+
+    <string name="cless_nse_text">Los hogares de este nivel se caracterizan por tener cubiertas las
+        necesidades de espacio y sanidad y por contar con los enseres y equipos que le aseguren el
+        mínimo de practicidad y comodidad en el hogar. Este segmento representa el 12.8 porciento del total
+        de hogares del país y el 16.6 porciento de los hogares en localidades mayores de 100 mil habitantes del país.</string>
+
+    <string name="dplus_nse_text">Este segmento tiene cubierta la mínima infraestructura sanitaria
+        de su hogar. Actualmente representa el 19.0 porciento de los hogares del país y el 20.2 porciento de los
+        hogares en las localidades mayores de 100 mil habitantes del país.</string>
+
+    <string name="d_nse_text">Es el segundo segmento con menor calidad de vida. Se caracteriza por
+        haber alcanzado una propiedad, pero carece de diversos servicios y satisfactores. Es el
+        grupo más numeroso y actualmente representa el 31.8 porciento de los hogares del país y el 23.8 porciento de
+        los hogares en localidades mayores de 100 mil habitantes.</string>
+
+    <string name="e_nse_text">Este es el segmento con menos calidad de vida o bienestar. Carece de
+        todos los servicios y bienes satisfactores. Actualmente representa el 12.5 porciento del total de
+        hogares del país y el 3.4 porciento de los hogares en localidades mayores de 100 mil habitantes.</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="ask_save_user">¿Quieres guardar tu resultado?</string>
+    <string name="input_name">Ingresa un nombre</string>
+    <string name="input_email">Ingresa un correo</string>
+    <string name="ex_et_name">Ej. Fernando Lazaro</string>
+    <string name="ex_et_email">Ej. lazaro@correo.com</string>
+    <string name="title_activity_user_result">UserResultActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -134,5 +178,4 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings">Settings</string>
 </resources>

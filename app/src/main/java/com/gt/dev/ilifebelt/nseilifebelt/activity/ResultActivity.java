@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,7 +16,9 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
     private Button btnShow, btnCancel, btnSave;
     private TextView tvResult, tvShow;
-    private String resultNSE, resultName, resultEmail;
+    private EditText etName, etEmail;
+    private String resultNSE;
+    private String name, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         btnCancel = (Button) findViewById(R.id.btn_cancel_result);
         tvResult = (TextView) findViewById(R.id.tv_result_nse);
         tvShow = (TextView) findViewById(R.id.tv_more_info);
+        etName = (EditText) findViewById(R.id.et_name_nse);
+        etEmail = (EditText) findViewById(R.id.et_email_nse);
 
         btnShow.setOnClickListener(this);
         btnSave.setOnClickListener(this);
@@ -39,19 +44,17 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     private void getSource() {
         Bundle bundle = getIntent().getExtras();
         resultNSE = bundle.getString("result_nse");
-        resultName = bundle.getString("result_name");
-        resultEmail = bundle.getString("result_email");
-
-        Log.d("**DATA_INFO**", resultName + "/" + resultEmail);
 
         tvResult.setText(resultNSE);
     }
 
     private void saveResult() {
         Results result = new Results();
-        result.name = resultName;
-        //result.email = resultEmail;
-        //result.nse = resultNSE;
+        name = etName.getText().toString().trim();
+        email = etEmail.getText().toString().trim();
+        result.name = name;
+        result.email = email;
+        result.nse = resultNSE;
         result.save();
         Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
         finish();
@@ -62,19 +65,19 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.btn_show_info:
                 if (tvResult.getText().toString().trim().equals("C+")) {
-                    tvShow.setText("C+");
+                    tvShow.setText(getString(R.string.cplus_nse_text));
                 } else if (tvResult.getText().toString().trim().equals("E")) {
-                    tvShow.setText("E");
+                    tvShow.setText(getString(R.string.e_nse_text));
                 } else if (tvResult.getText().toString().trim().equals("A/B")) {
-                    tvShow.setText("A/B");
+                    tvShow.setText(getString(R.string.ab_nse_text));
                 } else if (tvResult.getText().toString().trim().equals("C")) {
-                    tvShow.setText("C");
+                    tvShow.setText(getString(R.string.c_nse_text));
                 } else if (tvResult.getText().toString().trim().equals("C-")) {
-                    tvShow.setText("C-");
+                    tvShow.setText(getString(R.string.cless_nse_text));
                 } else if (tvResult.getText().toString().trim().equals("D")) {
-                    tvShow.setText("D");
+                    tvShow.setText(getString(R.string.d_nse_text));
                 } else if (tvResult.getText().toString().trim().equals("D+")) {
-                    tvShow.setText("D+");
+                    tvShow.setText(getString(R.string.dplus_nse_text));
                 }
                 break;
             case R.id.btn_save_result:

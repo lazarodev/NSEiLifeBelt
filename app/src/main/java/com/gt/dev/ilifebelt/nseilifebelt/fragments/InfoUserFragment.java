@@ -20,8 +20,11 @@ public class InfoUserFragment extends AbstractStep {
     private EditText etName, etEmail;
     String getResult;
     String varInfo;
-    String name;
-    String email;
+    static String name;
+    static String email;
+
+    //private static final String nombre = "Fernando";
+    //private static final String correo = "lazaro@elcaldogt.com";
 
     public static final String TAG = "**NSE**";
 
@@ -74,11 +77,13 @@ public class InfoUserFragment extends AbstractStep {
     }
 
     public void theName() {
-        name = "example";
+        this.name = etName.getText().toString();
+        //name = nombre;
     }
 
     public void theEmail() {
-        email = "test@example.com";
+        this.email = etName.getText().toString();
+        //email = correo;
     }
 
     public void finalValue() {
