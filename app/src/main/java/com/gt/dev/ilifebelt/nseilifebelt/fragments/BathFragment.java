@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
@@ -49,6 +50,7 @@ public class BathFragment extends AbstractStep implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_00_bath:
+                onNext();
                 bath = 0;
                 break;
             case R.id.btn_01_bath:

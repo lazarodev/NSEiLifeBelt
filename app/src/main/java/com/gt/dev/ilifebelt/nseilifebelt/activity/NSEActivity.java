@@ -34,7 +34,7 @@ public class NSEActivity extends TabStepper {
         setErrorTimeout(1500);
         setLinear(linear);
         setTitle("Encuestador");
-        setAlternativeTab(true);
+        //setAlternativeTab(true);
 
         ActiveAndroid.initialize(getApplication());
 

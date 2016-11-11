@@ -9,26 +9,41 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
+import com.activeandroid.query.Delete;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
+import com.gt.dev.ilifebelt.nseilifebelt.model.Results;
 
-public class UserResultActivity extends AppCompatActivity {
+public class UserResultActivity extends AppCompatActivity implements View.OnClickListener {
 
     private String name, email, nse;
     private FloatingActionButton fab;
+    private TextView tvName, tvEmail, tvNSE;
     private CollapsingToolbarLayout collapsingToolbarLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_result);
+        startVars();
+
+        getSource();
+    }
+
+    private void startVars() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout_result);
 
-        getSource();
+        //FloatinActionButton Delete Item
+        fab = (FloatingActionButton) findViewById(R.id.fab_delete_item);
+        fab.setOnClickListener(this);
+
+        collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout_result);
+        tvName = (TextView) findViewById(R.id.tv_user_name);
+        tvEmail = (TextView) findViewById(R.id.tv_user_email);
+        tvNSE = (TextView) findViewById(R.id.tv_user_mean);
     }
 
     private void getSource() {
@@ -37,23 +52,37 @@ public class UserResultActivity extends AppCompatActivity {
         email = bundle.getString("email");
         nse = bundle.getString("nse");
 
-        collapsingToolbarLayout.setTitle(name);
+        collapsingToolbarLayout.setTitle("NSE: " + nse);
+        tvName.setText(name);
+        tvEmail.setText(email);
 
         if (nse.equals("E")) {
-            collapsingToolbarLayout.setBackgroundResource(android.R.color.holo_red_dark);
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_e);
+            tvNSE.setText(getString(R.string.e_nse_text));
         } else if (nse.equals("A/B")) {
-            collapsingToolbarLayout.setBackgroundResource(android.R.color.holo_orange_dark);
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_ab);
+            tvNSE.setText(getString(R.string.ab_nse_text));
         } else if (nse.equals("C")) {
-            collapsingToolbarLayout.setBackgroundResource(android.R.color.holo_blue_dark);
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_c);
+            tvNSE.setText(getString(R.string.c_nse_text));
         } else if (nse.equals("C+")) {
-            collapsingToolbarLayout.setBackgroundResource(android.R.color.holo_purple);
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_cplus);
+            tvNSE.setText(getString(R.string.cplus_nse_text));
         } else if (nse.equals("D")) {
-            collapsingToolbarLayout.setBackgroundResource(android.R.color.holo_green_dark);
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_d);
+            tvNSE.setText(getString(R.string.d_nse_text));
         } else if (nse.equals("D+")) {
-            collapsingToolbarLayout.setBackgroundResource(android.R.color.white);
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_dplus);
+            tvNSE.setText(getString(R.string.dplus_nse_text));
         } else if (nse.equals("C-")) {
-            collapsingToolbarLayout.setBackgroundResource(android.R.color.black);
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_cless);
+            tvNSE.setText(getString(R.string.cless_nse_text));
         }
+    }
+
+    private void deleteItem() {
+        new Delete().from(Results.class).where("Name = ?", name).execute();
+        finish();
     }
 
     @Override
@@ -64,5 +93,14 @@ public class UserResultActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fab_delete_item:
+                deleteItem();
+                break;
+        }
     }
 }
