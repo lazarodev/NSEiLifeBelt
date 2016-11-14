@@ -81,7 +81,11 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                 }
                 break;
             case R.id.btn_save_result:
-                saveResult();
+                if (etEmail.getText().toString().equals("") | etName.getText().toString().equals("")) {
+                    Toast.makeText(this, getString(R.string.validate_name_email), Toast.LENGTH_SHORT).show();
+                } else {
+                    saveResult();
+                }
                 break;
             case R.id.btn_cancel_result:
                 finish();

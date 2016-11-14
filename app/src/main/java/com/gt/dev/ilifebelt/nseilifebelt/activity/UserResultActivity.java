@@ -1,15 +1,18 @@
 package com.gt.dev.ilifebelt.nseilifebelt.activity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.activeandroid.query.Delete;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
@@ -81,8 +84,32 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
     }
 
     private void deleteItem() {
-        new Delete().from(Results.class).where("Name = ?", name).execute();
-        finish();
+        if (name != null) {
+            new Delete().from(Results.class).where("Name = ?", name).execute();
+            Toast.makeText(this, getString(R.string.item_deleted), Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            Toast.makeText(this, getString(R.string.item_cant_deleted), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void deleteDialog() {
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case DialogInterface.BUTTON_POSITIVE:
+                        deleteItem();
+                        break;
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        Toast.makeText(UserResultActivity.this, getString(R.string.no_changues_delete), Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+        };
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.question_delete)).setPositiveButton(getString(R.string.yes_answer), dialogClickListener)
+                .setNegativeButton(getString(R.string.no_answer), dialogClickListener).show();
     }
 
     @Override
@@ -99,7 +126,7 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab_delete_item:
-                deleteItem();
+                deleteDialog();
                 break;
         }
     }

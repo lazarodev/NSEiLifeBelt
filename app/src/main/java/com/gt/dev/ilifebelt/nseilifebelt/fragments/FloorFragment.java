@@ -20,6 +20,11 @@ public class FloorFragment extends AbstractStep implements View.OnClickListener 
 
     private Button btnYesFloor, btnNoFloor;
 
+    private String title;
+
+    private int click;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -29,13 +34,25 @@ public class FloorFragment extends AbstractStep implements View.OnClickListener 
 
         btnYesFloor.setOnClickListener(this);
         btnNoFloor.setOnClickListener(this);
+
+        title = getString(R.string.piso_title_fragment);
+
         return v;
     }
 
     @Override
     public String name() {
-        String text = "Piso";
-        return text;
+        return "Piso";
+    }
+
+    @Override
+    public boolean nextIf() {
+        return click > 0;
+    }
+
+    @Override
+    public String error() {
+        return getString(R.string.validate_click);
     }
 
     @Override
@@ -43,9 +60,11 @@ public class FloorFragment extends AbstractStep implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.btn_yes_floor:
                 floor = 11;
+                click++;
                 break;
             case R.id.btn_no_floor:
                 floor = 0;
+                click++;
                 break;
         }
     }

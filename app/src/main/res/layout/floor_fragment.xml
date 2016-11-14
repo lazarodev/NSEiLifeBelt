@@ -22,7 +22,10 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
         android:text="Tierra o cemento firme"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="italic" />
 
@@ -33,7 +36,10 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:text="Otro tipo de amterial o acabo"
+        android:background="@color/colorPrimary"
+        android:text="Otro tipo de material o acabado"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="italic" />
 </LinearLayout>

@@ -1,11 +1,13 @@
 package com.gt.dev.ilifebelt.nseilifebelt.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
@@ -17,9 +19,16 @@ import com.gt.dev.ilifebelt.nseilifebelt.activity.NSEActivity;
 
 public class RoomFragment extends AbstractStep implements View.OnClickListener {
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+    }
+
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
 
     public static int room;
+    private int click;
+    private String title;
 
     @Nullable
     @Override
@@ -42,13 +51,25 @@ public class RoomFragment extends AbstractStep implements View.OnClickListener {
         btn6.setOnClickListener(this);
         btn7.setOnClickListener(this);
 
+        title = getString(R.string.room_title_fragment);
+
         return v;
     }
 
     @Override
     public String name() {
-        String hola = "Habitaciones";
-        return hola;
+        //return getString(R.string.room_title_fragment);
+        return "Habitaciones";
+    }
+
+    @Override
+    public boolean nextIf() {
+        return click > 0;
+    }
+
+    @Override
+    public String error() {
+        return getString(R.string.validate_click);
     }
 
     @Override
@@ -62,24 +83,31 @@ public class RoomFragment extends AbstractStep implements View.OnClickListener {
             case R.id.btn_01_room:
                 onNext();
                 room = 0;
+                click++;
                 break;
             case R.id.btn_02_room:
                 room = 0;
+                click++;
                 break;
             case R.id.btn_03_room:
                 room = 0;
+                click++;
                 break;
             case R.id.btn_04_room:
                 room = 0;
+                click++;
                 break;
             case R.id.btn_05_room:
                 room = 8;
+                click++;
                 break;
             case R.id.btn_06_room:
                 room = 8;
+                click++;
                 break;
             case R.id.btn_07_room:
                 room = 14;
+                click++;
                 break;
         }
     }

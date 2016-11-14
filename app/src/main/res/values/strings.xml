@@ -3,7 +3,7 @@
     <string name="title_activity_main">MainActivity</string>
 
     // Questions and description for the fragments
-    <string name="room_question">¿Cuál es el totla de cuartos, piezas o habitaciones con que cuenta en su hogar?</string>
+    <string name="room_question">¿Cuál es el total de cuartos, piezas o habitaciones con que cuenta en su hogar?</string>
     <string name="room_description">Por favor no incluya baños, medios banos, pasillos patios y zotehuelas</string>
     <string name="bat_question">¿Cuántos baños completos con regadera y W.C (excusado) hay para uso exclusivo de los integrantes de su hogar?</string>
     <string name="wateringcan_question">¿En su hogar cuenta con regadera funcionando en alguno de los baños</string>
@@ -178,4 +178,23 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="item_deleted">Registro Eliminado</string>
+    <string name="item_cant_deleted">Intentalo de nuevo</string>
+    <string name="no_changues_delete">No se ha generado ningun cambio</string>
+    <string name="question_delete">Estas seguro de eliminar a este registro?</string>
+    <string name="yes_answer">Si</string>
+    <string name="no_answer">No</string>
+    <string name="validate_name_email">Porfavor ingresa un nombre y un correo</string>
+
+    <string name="validate_click">Por favor selecciona una opción</string>
+
+    //TitleFragments
+    <string name="banos_title_fragment">Baños</string>
+    <string name="cars_title_fragment">Automoviles</string>
+    <string name="piso_title_fragment">Piso</string>
+    <string name="room_title_fragment">Habitaciones</string>
+    <string name="spotlight_title_fragment">Focos</string>
+    <string name="stove_title_fragment">Estufa</string>
+    <string name="study_title_fragment">Estudios</string>
+    <string name="watering_title_fragment">Regadera</string>
 </resources>

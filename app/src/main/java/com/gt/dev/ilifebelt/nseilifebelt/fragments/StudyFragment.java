@@ -27,6 +27,23 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
     private ListView lvStudy;
     private ArrayList<Study> categoria = new ArrayList<>();
     public static int study;
+    String getResult;
+    String varInfo;
+    private int click;
+
+    private String title;
+
+    public static final String TAG = "**NSE**";
+
+    int valorRoom, valueBath, valueSpot, valueStove, valueCars, valueFloor, valueWater, finalCount;
+
+    public String getVarFinal() {
+        return varInfo;
+    }
+
+    public void setVarFinal(String varStudy) {
+        this.varInfo = varStudy;
+    }
 
     @Nullable
     @Override
@@ -34,6 +51,8 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
         View v = inflater.inflate(R.layout.studies_fragment, container, false);
 
         lvStudy = (ListView) v.findViewById(R.id.lv_studies);
+
+        title = getString(R.string.study_title_fragment);
 
         // Items
         categoria.add(new Study(getString(R.string.no_study)));
@@ -60,8 +79,17 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
 
     @Override
     public String name() {
-        String text = "Estudios";
-        return text;
+        return "Studios";
+    }
+
+    @Override
+    public boolean nextIf() {
+        return click > 0;
+    }
+
+    @Override
+    public String error() {
+        return getString(R.string.validate_click);
     }
 
     @Override
@@ -69,43 +97,118 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
         switch (position) {
             case 0:
                 study = 0;
+                click++;
                 break;
             case 1:
                 study = 0;
+                click++;
                 break;
             case 2:
                 study = 22;
+                click++;
                 break;
             case 3:
                 study = 22;
+                click++;
                 break;
             case 4:
                 study = 22;
+                click++;
                 break;
             case 5:
                 study = 38;
+                click++;
                 break;
             case 6:
                 study = 38;
+                click++;
                 break;
             case 7:
                 study = 38;
+                click++;
                 break;
             case 8:
                 study = 38;
+                click++;
                 break;
             case 9:
                 study = 52;
+                click++;
                 break;
             case 10:
                 study = 52;
+                click++;
                 break;
             case 11:
                 study = 72;
+                click++;
                 break;
             case 12:
                 study = 72;
+                click++;
                 break;
         }
+    }
+
+    public void finalValue() {
+
+        valorRoom = RoomFragment.room;
+        String roomString = String.valueOf(valorRoom);
+        Log.d("**ROOM_FRAGMENT**", roomString);
+
+        valueBath = BathFragment.bath;
+        String bathString = String.valueOf(valueBath);
+        Log.d("**BATH_FRAGMENT**", bathString);
+
+        valueWater = WateringCanFragment.watering;
+        String waterString = String.valueOf(valueWater);
+        Log.d("**WATER_FRAGMENT**", waterString);
+
+
+        valueSpot = SpotlightFragment.spotligth;
+        String spotString = String.valueOf(valueSpot);
+        Log.d("**SPOT_FRAGMENT**", spotString);
+
+        valueCars = CarsFragment.cars;
+        String carsString = String.valueOf(valueCars);
+        Log.d("**CARS_FRAGMENT", carsString);
+
+        valueStove = StoveFragment.stove;
+        String stoveString = String.valueOf(valueStove);
+        Log.d("**STOVE_FRAGMENT**", stoveString);
+
+        valueFloor = FloorFragment.floor;
+        String floorString = String.valueOf(valueFloor);
+        Log.d("**FLOOR_FRAGMENT**", floorString);
+
+        finalCount = valorRoom + valueBath + valueWater + valueSpot + valueStove + valueCars + valueFloor + study;
+        //this.varStudy = finalCount;
+        String sumatorio = String.valueOf(finalCount);
+        Log.d("**SUMATORIA_TOTAL**", sumatorio);
+
+        if (finalCount <= 32) {
+            Log.d(TAG, "E");
+            getResult = "E";
+        } else if (finalCount >= 33 && finalCount <= 79) {
+            Log.d(TAG, "D");
+            getResult = "D";
+        } else if (finalCount >= 80 && finalCount <= 104) {
+            Log.d(TAG, "D+");
+            getResult = "D+";
+        } else if (finalCount >= 105 && finalCount <= 127) {
+            Log.d(TAG, "C-");
+            getResult = "C-";
+        } else if (finalCount >= 128 && finalCount <= 154) {
+            Log.d(TAG, "C");
+            getResult = "C";
+        } else if (finalCount >= 155 && finalCount <= 192) {
+            Log.d(TAG, "C+");
+            getResult = "C+";
+        } else if (finalCount >= 193) {
+            Log.d(TAG, "A/B");
+            getResult = "A/B";
+        }
+
+        this.varInfo = getResult;
     }
 }

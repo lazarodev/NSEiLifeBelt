@@ -18,6 +18,8 @@ public class SpotlightFragment extends AbstractStep implements View.OnClickListe
 
     public static int spotligth;
     private Button btn05Spot, btn0610Spot, btn1115Spot, btn1620Spot, btn21Spot;
+    private String title;
+    private int click;
 
     @Nullable
     @Override
@@ -36,13 +38,24 @@ public class SpotlightFragment extends AbstractStep implements View.OnClickListe
         btn1620Spot.setOnClickListener(this);
         btn21Spot.setOnClickListener(this);
 
+        title = getString(R.string.spotlight_title_fragment);
+
         return v;
     }
 
     @Override
     public String name() {
-        String text = "Focos";
-        return text;
+        return "Focos";
+    }
+
+    @Override
+    public boolean nextIf() {
+        return click > 0;
+    }
+
+    @Override
+    public String error() {
+        return getString(R.string.validate_click);
     }
 
     @Override
@@ -50,18 +63,23 @@ public class SpotlightFragment extends AbstractStep implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btn_05_spot:
                 spotligth = 0;
+                click++;
                 break;
             case R.id.btn_610_spot:
                 spotligth = 15;
+                click++;
                 break;
             case R.id.btn_1115_spot:
                 spotligth = 27;
+                click++;
                 break;
             case R.id.btn_1620_spot:
                 spotligth = 32;
+                click++;
                 break;
             case R.id.btn_21_spot:
                 spotligth = 46;
+                click++;
                 break;
         }
     }

@@ -20,18 +20,21 @@ import com.gt.dev.ilifebelt.nseilifebelt.R;
 public class BathFragment extends AbstractStep implements View.OnClickListener {
 
     public static int bath;
-    private Button btn1, btn2, btn3, btn4;
+    private int click;
+    private Button btn0, btn1, btn2, btn3, btn4;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.bath_fragment, container, false);
 
-        btn1 = (Button) v.findViewById(R.id.btn_00_bath);
-        btn2 = (Button) v.findViewById(R.id.btn_01_bath);
+        btn0 = (Button) v.findViewById(R.id.btn_00_bath);
+        btn1 = (Button) v.findViewById(R.id.btn_01_bath);
+        btn2 = (Button) v.findViewById(R.id.btn_02_bath);
         btn3 = (Button) v.findViewById(R.id.btn_03_bath);
         btn4 = (Button) v.findViewById(R.id.btn_04_bath);
 
+        btn0.setOnClickListener(this);
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
@@ -42,8 +45,17 @@ public class BathFragment extends AbstractStep implements View.OnClickListener {
 
     @Override
     public String name() {
-        String banos = "Baños";
-        return banos;
+        return "Baños";
+    }
+
+    @Override
+    public boolean nextIf() {
+        return click > 0;
+    }
+
+    @Override
+    public String error() {
+        return getString(R.string.validate_click);
     }
 
     @Override
@@ -52,18 +64,23 @@ public class BathFragment extends AbstractStep implements View.OnClickListener {
             case R.id.btn_00_bath:
                 onNext();
                 bath = 0;
+                click++;
                 break;
             case R.id.btn_01_bath:
                 bath = 16;
+                click++;
                 break;
             case R.id.btn_02_bath:
                 bath = 36;
+                click++;
                 break;
             case R.id.btn_03_bath:
                 bath = 36;
+                click++;
                 break;
             case R.id.btn_04_bath:
                 bath = 52;
+                click++;
                 break;
         }
     }

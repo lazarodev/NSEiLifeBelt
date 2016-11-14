@@ -11,13 +11,11 @@ import com.github.fcannizzaro.materialstepper.style.TabStepper;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.BathFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.CarsFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.FloorFragment;
-import com.gt.dev.ilifebelt.nseilifebelt.fragments.InfoUserFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.RoomFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.SpotlightFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.StoveFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.StudyFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.WateringCanFragment;
-import com.gt.dev.ilifebelt.nseilifebelt.model.Results;
 
 public class NSEActivity extends TabStepper {
 
@@ -66,9 +64,9 @@ public class NSEActivity extends TabStepper {
 
     private void saveResult() {
 
-        InfoUserFragment infoUserFragment = new InfoUserFragment();
-        infoUserFragment.finalValue();
-        String finalString = infoUserFragment.getVarFinal();
+        StudyFragment studyFragment = new StudyFragment();
+        studyFragment.finalValue();
+        String finalString = studyFragment.getVarFinal();
 
         //String finalResult = String.valueOf(valorStudy);
         Log.d("FINAL RESULT", finalString);

@@ -18,6 +18,8 @@ public class CarsFragment extends AbstractStep implements View.OnClickListener {
 
     private Button btn00, btn01, btn02, btn03;
     public static int cars;
+    private String title;
+    private int click;
 
     @Nullable
     @Override
@@ -34,13 +36,24 @@ public class CarsFragment extends AbstractStep implements View.OnClickListener {
         btn02.setOnClickListener(this);
         btn03.setOnClickListener(this);
 
+        title = getString(R.string.cars_title_fragment);
+
         return v;
     }
 
     @Override
     public String name() {
-        String autos = "Autos";
-        return autos;
+        return "Automoviles";
+    }
+
+    @Override
+    public boolean nextIf() {
+        return click > 0;
+    }
+
+    @Override
+    public String error() {
+        return getString(R.string.validate_click);
     }
 
     @Override
@@ -48,15 +61,19 @@ public class CarsFragment extends AbstractStep implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btn_00_cars:
                 cars = 0;
+                click++;
                 break;
             case R.id.btn_01_cars:
                 cars = 32;
+                click++;
                 break;
             case R.id.btn_02_cars:
                 cars = 41;
+                click++;
                 break;
             case R.id.btn_03_cars:
                 cars = 58;
+                click++;
                 break;
         }
     }

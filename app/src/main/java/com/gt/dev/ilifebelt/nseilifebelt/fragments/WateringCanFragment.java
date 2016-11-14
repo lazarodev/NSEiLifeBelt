@@ -18,6 +18,8 @@ public class WateringCanFragment extends AbstractStep implements View.OnClickLis
 
     public static int watering;
     private Button btnYes, btnNo;
+    private String title;
+    private int click;
 
     @Nullable
     @Override
@@ -29,13 +31,25 @@ public class WateringCanFragment extends AbstractStep implements View.OnClickLis
 
         btnYes.setOnClickListener(this);
         btnNo.setOnClickListener(this);
+
+        title = getString(R.string.validate_click);
+
         return v;
     }
 
     @Override
     public String name() {
-        String text = "Regadera";
-        return text;
+        return "Regadera";
+    }
+
+    @Override
+    public boolean nextIf() {
+        return click > 0;
+    }
+
+    @Override
+    public String error() {
+        return getString(R.string.validate_click);
     }
 
     @Override
@@ -43,9 +57,11 @@ public class WateringCanFragment extends AbstractStep implements View.OnClickLis
         switch (v.getId()) {
             case R.id.btn_yes_water:
                 watering = 10;
+                click++;
                 break;
             case R.id.btn_no_water:
                 watering = 0;
+                click++;
                 break;
         }
     }

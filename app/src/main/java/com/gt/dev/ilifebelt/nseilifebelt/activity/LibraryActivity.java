@@ -25,6 +25,7 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
     private ArrayList<Library> inventoryItems = new ArrayList<>();
     //private ArrayAdapter inventoryItemsAdapter;
     private String name;
+    private LibraryAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,17 +53,19 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
         }
 
         //creating own adapter
-        LibraryAdapter adapter = new LibraryAdapter(inventoryItems, this);
+        adapter = new LibraryAdapter(inventoryItems, this);
         //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, inventoryItems);
         lvResults.setAdapter(adapter);
+
+        updateList();
     }
 
     private List<Results> getAll() {
         return new Select().from(Results.class).orderBy("ID").execute();
     }
 
-    private List<Results> getUser() {
-        return new Select().from(Results.class).where("name = ?", name).executeSingle();
+    private void updateList() {
+        adapter.notifyDataSetChanged();
     }
 
     @Override

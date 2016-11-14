@@ -18,6 +18,8 @@ public class StoveFragment extends AbstractStep implements View.OnClickListener 
 
     public static int stove;
     private Button btnYes, btnNo;
+    private String title;
+    private int click;
 
     @Nullable
     @Override
@@ -30,24 +32,36 @@ public class StoveFragment extends AbstractStep implements View.OnClickListener 
         btnYes.setOnClickListener(this);
         btnNo.setOnClickListener(this);
 
+        title = getString(R.string.validate_click);
+
         return v;
     }
 
     @Override
     public String name() {
-        String text = "Estufa";
-        return text;
+        return title;
     }
 
+    @Override
+    public boolean nextIf() {
+        return click > 0;
+    }
+
+    @Override
+    public String error() {
+        return getString(R.string.validate_click);
+    }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_yes_stove:
                 stove = 20;
+                click++;
                 break;
             case R.id.btn_no_stove:
                 stove = 0;
+                click++;
                 break;
         }
     }

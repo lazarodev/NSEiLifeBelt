@@ -34,17 +34,29 @@
 
         <Button
             android:id="@+id/btn_05_spot"
+            style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="0-5"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_610_spot"
+            style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="6-10"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="italic" />
 
@@ -61,17 +73,29 @@
 
         <Button
             android:id="@+id/btn_1115_spot"
+            style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="11-15"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_1620_spot"
+            style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorPrimary"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="16-20"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="italic" />
 
@@ -79,12 +103,15 @@
 
     <Button
         android:id="@+id/btn_21_spot"
+        style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
         android:text="21 o más"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
         android:textStyle="italic" />
 
