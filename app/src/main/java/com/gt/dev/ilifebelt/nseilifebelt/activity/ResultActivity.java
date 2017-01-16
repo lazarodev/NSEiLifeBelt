@@ -12,6 +12,9 @@ import android.widget.Toast;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
 import com.gt.dev.ilifebelt.nseilifebelt.model.Results;
 
+/**
+ * Clase que muestra el resultado despues de finalizada la encuesta.
+ */
 public class ResultActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button btnShow, btnCancel, btnSave;
@@ -48,6 +51,7 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         tvResult.setText(resultNSE);
     }
 
+    // guardando el resultado en una base de datos
     private void saveResult() {
         Results result = new Results();
         name = etName.getText().toString().trim();
@@ -60,6 +64,11 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         finish();
     }
 
+    /**
+     * Metodo nativo para indicar la accion a cada boton segun el caso.
+     *
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -93,11 +102,17 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
+    /**
+     * Metodo nativo cuando la actividad entra background
+     */
     @Override
     protected void onPause() {
         super.onPause();
     }
 
+    /**
+     * Metodo nativo cuando la actividad regresa de background
+     */
     @Override
     protected void onResume() {
         super.onResume();

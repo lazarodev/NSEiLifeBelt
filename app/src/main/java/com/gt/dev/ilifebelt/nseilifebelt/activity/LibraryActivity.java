@@ -19,6 +19,9 @@ import com.gt.dev.ilifebelt.nseilifebelt.model.Results;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Actividad que muestra los registro de los usuarios.
+ */
 public class LibraryActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView lvResults;
@@ -40,6 +43,9 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
         showInventorylist();
     }
 
+    /**
+     * Metodo que muestra los registros de la base de datos
+     */
     private void showInventorylist() {
         List<Results> inventories = getAll();
 
@@ -68,6 +74,15 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
         adapter.notifyDataSetChanged();
     }
 
+    /**
+     * Metodo nativo para indicar que envia a la siguiente actividad
+     * segun el item que se seleccione
+     *
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Library cat = (Library) parent.getItemAtPosition(position);
@@ -79,6 +94,11 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
         startActivity(new Intent(LibraryActivity.this, UserResultActivity.class).putExtras(bundle));
     }
 
+    /**
+     * Metodo nativo cuando se presiona algun boton del actionbar
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -89,11 +109,17 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Metodo nativo cuando la actividad entra en pausa.
+     */
     @Override
     protected void onPause() {
         super.onPause();
     }
 
+    /**
+     * Metodo nativo cuando la actividad regresa de la pausa.
+     */
     @Override
     protected void onResume() {
         super.onResume();

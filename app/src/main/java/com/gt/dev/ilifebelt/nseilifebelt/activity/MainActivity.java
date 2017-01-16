@@ -16,6 +16,11 @@ import com.gt.dev.ilifebelt.nseilifebelt.fragments.RoomFragment;
 
 import java.util.ArrayList;
 
+/**
+ * En MainActivity se muestra el menu principal para que
+ * el usuario pueda escoger una de las opciones presentadas.
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ListView lvMain;
@@ -30,13 +35,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toolbar = (Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
 
+        // Seteamos el titulo de la app
         getSupportActionBar().setTitle("iLifeBelt NSE");
+        // Seteamos el subtitulo de la app
         getSupportActionBar().setSubtitle("Nivel Socio Economico");
+        // seteamos un icono para la app
         getSupportActionBar().setIcon(R.drawable.iconoapp);
 
         startVars();
     }
 
+    /**
+     * Metodo que inicializa todas las variables
+     */
     private void startVars() {
         fab = (FloatingActionButton) findViewById(R.id.fab_main);
         fab.setOnClickListener(this);
@@ -55,6 +66,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lvMain.setOnItemClickListener(this);
     }
 
+    /**
+     * Indicamos que hara el FloatingActionButton cuando es presionado.
+     *
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -65,6 +81,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * Seteamos las funciones que realizara cada item al momento de ser
+     * presionado por posicion.
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
@@ -83,11 +107,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     * Metodo nativo cuando la actividad entra en segundo plano.
+     */
     @Override
     protected void onPause() {
         super.onPause();
     }
 
+    /**
+     * Metodo nativo cuando la actividad de regresa de
+     * segundo plano hacia 1er plano.
+     */
     @Override
     protected void onResume() {
         super.onResume();

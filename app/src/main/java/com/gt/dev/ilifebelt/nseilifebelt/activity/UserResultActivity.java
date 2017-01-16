@@ -18,6 +18,9 @@ import com.activeandroid.query.Delete;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
 import com.gt.dev.ilifebelt.nseilifebelt.model.Results;
 
+/**
+ * Actividad que muestra los detalles del resultado.
+ */
 public class UserResultActivity extends AppCompatActivity implements View.OnClickListener {
 
     private String name, email, nse;
@@ -34,6 +37,9 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
         getSource();
     }
 
+    /**
+     * Metodo que inicializa todas las variables.
+     */
     private void startVars() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,6 +55,10 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
         tvNSE = (TextView) findViewById(R.id.tv_user_mean);
     }
 
+    /**
+     * Metodo que obtiene la data que ha seleccionado
+     * el usuario con anterioridad.
+     */
     private void getSource() {
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("name");
@@ -83,6 +93,9 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
+    /**
+     * Metodo para eliminar al usuario.
+     */
     private void deleteItem() {
         if (name != null) {
             new Delete().from(Results.class).where("Name = ?", name).execute();
@@ -93,6 +106,9 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
+    /**
+     * Metodo donde muestra si esta seguro de eliminar al usuario.
+     */
     private void deleteDialog() {
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
@@ -112,6 +128,12 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
                 .setNegativeButton(getString(R.string.no_answer), dialogClickListener).show();
     }
 
+    /**
+     * Metodo nativo que controla los botones del toolbar.
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -122,6 +144,11 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Metodo nativo implmementado por la interfaz,
+     * donde indica la funcionalidad del FloatingActionButton.
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

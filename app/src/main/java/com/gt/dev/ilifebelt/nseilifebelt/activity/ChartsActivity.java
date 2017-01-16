@@ -14,6 +14,9 @@ import com.gt.dev.ilifebelt.nseilifebelt.R;
 
 import java.util.ArrayList;
 
+/**
+ * Clase que contiene las estadisticas a mostrar
+ */
 public class ChartsActivity extends AppCompatActivity {
 
     private BarChart barChart;
@@ -28,6 +31,9 @@ public class ChartsActivity extends AppCompatActivity {
         startVars();
     }
 
+    /**
+     * Metodo que inicializa todas las variables
+     */
     private void startVars() {
         barChart = (BarChart) findViewById(R.id.barchart_chart);
         data = new BarData(getXAxisValues(), getDataSet());
@@ -38,6 +44,11 @@ public class ChartsActivity extends AppCompatActivity {
         barChart.invalidate();
     }
 
+    /**
+     * Arreglo que contiene los datos a mostrar
+     *
+     * @return
+     */
     private ArrayList<BarDataSet> getDataSet() {
         ArrayList<BarDataSet> dataSets = null;
 
@@ -80,6 +91,10 @@ public class ChartsActivity extends AppCompatActivity {
         return dataSets;
     }
 
+    /**
+     * Arreglo de los meses
+     * @return
+     */
     private ArrayList<String> getXAxisValues() {
         ArrayList<String> xAxis = new ArrayList<>();
         xAxis.add("JAN");
@@ -91,6 +106,11 @@ public class ChartsActivity extends AppCompatActivity {
         return xAxis;
     }
 
+    /**
+     * Metodo nativo para los botones del action bar
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -101,11 +121,17 @@ public class ChartsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Metodo nativo cuando la actividad entra en background.
+     */
     @Override
     protected void onPause() {
         super.onPause();
     }
 
+    /**
+     * Metodo nativo cuando la actividad regresa del background.
+     */
     @Override
     protected void onResume() {
         super.onResume();

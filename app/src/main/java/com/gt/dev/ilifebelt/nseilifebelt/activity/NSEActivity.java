@@ -17,6 +17,9 @@ import com.gt.dev.ilifebelt.nseilifebelt.fragments.StoveFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.StudyFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.WateringCanFragment;
 
+/**
+ * Clase que extiende de la super clase TabStepper.
+ */
 public class NSEActivity extends TabStepper {
 
     private int i = 1;
@@ -24,6 +27,8 @@ public class NSEActivity extends TabStepper {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        // Obtenemos el toolbar y volvemos esta actividad
+        // en modo fullscreen.
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -36,6 +41,7 @@ public class NSEActivity extends TabStepper {
 
         ActiveAndroid.initialize(getApplication());
 
+        // Agregamos cada uno de los fragmentos a utilizar
         addStep(createFragment(new RoomFragment()));
         addStep(createFragment(new BathFragment()));
         addStep(createFragment(new WateringCanFragment()));
@@ -49,6 +55,12 @@ public class NSEActivity extends TabStepper {
         super.onCreate(savedInstanceState);
     }
 
+    /**
+     * Metodo para crear fragment y setearlo en la actividad.
+     *
+     * @param fragment
+     * @return
+     */
     private AbstractStep createFragment(AbstractStep fragment) {
         Bundle b = new Bundle();
         b.putInt("position", i++);
@@ -56,12 +68,18 @@ public class NSEActivity extends TabStepper {
         return fragment;
     }
 
+    /**
+     * Metodo cuando el cuestionario es completado.
+     */
     @Override
     public void onComplete() {
         super.onComplete();
         saveResult();
     }
 
+    /**
+     * Metodo para guardar el resultado en la base de datos.
+     */
     private void saveResult() {
         StudyFragment studyFragment = new StudyFragment();
         studyFragment.finalValue();
@@ -74,6 +92,9 @@ public class NSEActivity extends TabStepper {
         startActivity(new Intent(NSEActivity.this, ResultActivity.class).putExtras(bundle));
     }
 
+    /**
+     * Metodo nativo para ucando la app entra en 2do plano
+     */
     @Override
     protected void onPause() {
         super.onPause();

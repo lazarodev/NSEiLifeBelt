@@ -10,6 +10,9 @@ import android.view.View;
 
 import com.gt.dev.ilifebelt.nseilifebelt.R;
 
+/**
+ * Actividad que contiene los creditos de desarrollo.
+ */
 public class AboutActivity extends AppCompatActivity {
 
     @Override
@@ -31,6 +34,12 @@ public class AboutActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Metodo nativo para los botnes del actionbar
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
