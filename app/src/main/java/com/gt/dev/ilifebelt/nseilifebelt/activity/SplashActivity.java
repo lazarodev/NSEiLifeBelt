@@ -8,7 +8,7 @@ import com.gt.dev.ilifebelt.nseilifebelt.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    protected static final long TIEMPO = 1000;
+    protected static final long TIEMPO = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

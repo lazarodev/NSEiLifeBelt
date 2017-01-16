@@ -63,7 +63,6 @@ public class NSEActivity extends TabStepper {
     }
 
     private void saveResult() {
-
         StudyFragment studyFragment = new StudyFragment();
         studyFragment.finalValue();
         String finalString = studyFragment.getVarFinal();
