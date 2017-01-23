@@ -46,6 +46,10 @@
         <activity
             android:name=".activity.UserResultActivity"
             android:label="@string/title_activity_user_result"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.ContactActivity"
+            android:label="@string/title_activity_contact"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

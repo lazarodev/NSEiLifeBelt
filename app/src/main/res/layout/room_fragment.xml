@@ -8,13 +8,13 @@
     android:paddingTop="10dp">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/room_question"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:id="@+id/textView" />
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="match_parent"
@@ -33,50 +33,46 @@
 
         <Button
             android:id="@+id/btn_01_room"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
-            android:elevation="3dp"
+            android:elevation="40dp"
             android:text="1"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
             android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_02_room"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
             android:text="2"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_03_room"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
             android:text="3"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_04_room"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
             android:text="4"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="20sp"
             android:textStyle="italic" />
     </LinearLayout>
@@ -91,39 +87,36 @@
 
         <Button
             android:id="@+id/btn_05_room"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
             android:text="5"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_06_room"
-            style="@style/Widget.AppCompat.Button.Small"
-            android:layout_width="wrap_content"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
             android:text="6"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_07_room"
-            style="@style/Widget.AppCompat.Button.Small"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:background="@color/colorPrimary"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:text="7 o más"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="italic" />
 

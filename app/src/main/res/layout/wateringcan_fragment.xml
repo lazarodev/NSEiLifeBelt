@@ -17,29 +17,29 @@
 
     <Button
         android:id="@+id/btn_no_water"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
         android:text="No tengo"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="italic" />
 
     <Button
         android:id="@+id/btn_yes_water"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
         android:text="Si tengo"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="italic" />
 

@@ -17,29 +17,29 @@
 
     <Button
         android:id="@+id/btn_no_floor"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
         android:text="Tierra o cemento firme"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="italic" />
 
     <Button
         android:id="@+id/btn_yes_floor"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp"
-        android:background="@color/colorPrimary"
         android:text="Otro tipo de material o acabado"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="italic" />
 </LinearLayout>

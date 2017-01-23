@@ -18,6 +18,7 @@
     // Text for the array in StudyFragment
     <string name="no_study">No estudio</string>
     <string name="primary_incomplete">Primaria incompleta</string>
+
     <string name="primary_completed">Primaria completa</string>
     <string name="secundary_incomplete">Secundaria incompleta</string>
     <string name="secundary_completed">Secundaria completa</string>
@@ -34,13 +35,13 @@
 
     <string name="about_ilifebelt_text">iLifebelt es una organización que brinda servicios de marketing digital
         e investigación de mercados independiente a gobiernos, partidos políticos o cualquier otra organización
-        de la sociedad civil. Dentro De la línea de servicios de investigación se encarga de preparar estudios
+        de la sociedad civil. \n \n
+        Dentro De la línea de servicios de investigación se encarga de preparar estudios
         y análisis técnicos en materia de uso de Internet y Redes Sociales en América Central (Estudios iLifebelt)
-        a través del Observatorio de Audiencias Digitales de Centroamérica. Además, brinda información, asesoría y
-        capacitación en materia de Redes Sociales y Marketing Digital a empresas privadas, autoridades locales y
+        a través del Observatorio de Audiencias Digitales de Centroamérica. \n \n
+        Además, brinda información, asesoría y capacitación en materia de Redes Sociales y Marketing Digital a empresas privadas, autoridades locales y
         organizaciones sociales y políticas con el propósito de contribuir a la formulación de estrategias de
-        comunicación efectivas.
-
+        comunicación efectivas. \n \n
         Con una visión integral y de largo plazo, iLifebelt promueve la discusión y reflexión de los temas relacionados
         al uso de Internet y Medios Digitales en Centroamérica para buscar consensos y acuerdos que contribuyan a la
         edificación de sociedades y estados equitativos, democráticos y prósperos.</string>
@@ -109,4 +110,5 @@
     <string name="stove_title_fragment">Estufa</string>
     <string name="study_title_fragment">Estudios</string>
     <string name="watering_title_fragment">Regadera</string>
+    <string name="title_activity_contact">ContactActivity</string>
 </resources>
