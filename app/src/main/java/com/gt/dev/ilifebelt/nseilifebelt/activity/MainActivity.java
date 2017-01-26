@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Items
         categoria.add(new Main("Datos NSE", "Estadisticas demograficas", R.drawable.ic_assessment_white_48dp));
-        categoria.add(new Main("Calculadora NSE", "Calcula tus NSE en 1 minuto", R.drawable.ic_border_color_white_48dp));
+        categoria.add(new Main("NSE México", "Calcula tus NSE en 1 minuto", R.drawable.ic_border_color_white_48dp));
+        categoria.add(new Main("NSE Guatemala", "Calcula tu NSE en 1 minuto", R.drawable.ic_border_color_white_48dp));
         categoria.add(new Main("Resultados", "Lista de resultados NSE", R.drawable.ic_assignment_white_48dp));
         categoria.add(new Main("Acerca de iLifeBelt", "Informacion de iLifebelt", R.drawable.ic_person_pin_white_48dp));
 
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /**
      * Seteamos las funciones que realizara cada item al momento de ser
      * presionado por posicion.
+     *
      * @param parent
      * @param view
      * @param position
@@ -97,9 +99,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(MainActivity.this, NSEActivity.class));
                 break;
             case 2:
-                startActivity(new Intent(MainActivity.this, LibraryActivity.class));
+                startActivity(new Intent(MainActivity.this, GtNSEActivity.class));
                 break;
             case 3:
+                startActivity(new Intent(MainActivity.this, LibraryActivity.class));
+                break;
+            case 4:
                 startActivity(new Intent(MainActivity.this, AboutActivity.class));
                 break;
         }

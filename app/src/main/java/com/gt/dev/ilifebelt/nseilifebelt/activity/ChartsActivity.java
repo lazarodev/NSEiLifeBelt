@@ -4,14 +4,19 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
+import com.github.mikephil.charting.utils.Highlight;
+import com.github.mikephil.charting.utils.ValueFormatter;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -19,8 +24,16 @@ import java.util.ArrayList;
  */
 public class ChartsActivity extends AppCompatActivity {
 
-    private BarChart barChart;
-    private BarData data;
+    private PieChart mChart;
+
+    private int[] yValues = {48, 14, 13, 13, 3};
+    private String[] xValues = {"Trabajadores", "Hospitalarios", "Solidarios", "Optimistas", "Honestos"};
+
+    //Colors for different sections in piechart
+    public static final int[] MY_COLORS = {
+            Color.rgb(84, 124, 101), Color.rgb(64, 64, 64), Color.rgb(153, 19, 0),
+            Color.rgb(38, 40, 53), Color.rgb(215, 60, 55)
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,85 +42,97 @@ public class ChartsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Datos estadisticos NSE");
         startVars();
+
+        setdataForPieChart();
     }
 
     /**
      * Metodo que inicializa todas las variables
      */
     private void startVars() {
-        barChart = (BarChart) findViewById(R.id.barchart_chart);
-        data = new BarData(getXAxisValues(), getDataSet());
+        mChart = (PieChart) findViewById(R.id.piechart_chart);
 
-        barChart.setData(data);
-        barChart.setDescription("IlifeBelt Chart");
-        barChart.animateXY(2000, 2000);
-        barChart.invalidate();
+        // mChart.setUsePercenValues(true)
+        mChart.setDescription("");
+
+        mChart.setRotationEnabled(true);
+
+        mChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
+                // display msg when vlaue selected
+                if (e == null)
+                    return;
+
+                Toast.makeText(ChartsActivity.this, xValues[e.getXIndex()] + "is " + e.getVal() + "", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onNothingSelected() {
+
+            }
+        });
+
+        // Setting smaple Data for Pie Chart
+
     }
 
-    /**
-     * Arreglo que contiene los datos a mostrar
-     *
-     * @return
-     */
-    private ArrayList<BarDataSet> getDataSet() {
-        ArrayList<BarDataSet> dataSets = null;
+    public void setdataForPieChart() {
+        ArrayList<Entry> yVals1 = new ArrayList<>();
 
-        ArrayList<BarEntry> valueSet1 = new ArrayList<>();
-        BarEntry vle1 = new BarEntry(110.000f, 0); // Jan
-        valueSet1.add(vle1);
-        BarEntry vle2 = new BarEntry(40.000f, 1); // Feb
-        valueSet1.add(vle2);
-        BarEntry vle3 = new BarEntry(60.000f, 2); // Mar
-        valueSet1.add(vle3);
-        BarEntry vle4 = new BarEntry(30.000f, 3); // Apr
-        valueSet1.add(vle4);
-        BarEntry vle5 = new BarEntry(90.000f, 4); // May
-        valueSet1.add(vle5);
-        BarEntry vle6 = new BarEntry(100.000f, 5); // Jun
-        valueSet1.add(vle6);
+        for (int i = 0; i < yValues.length; i++)
+            yVals1.add(new Entry(yValues[i], i));
 
-        ArrayList<BarEntry> valueSet2 = new ArrayList<>();
-        BarEntry v2e1 = new BarEntry(150.000f, 0); // Jan
-        valueSet2.add(v2e1);
-        BarEntry v2e2 = new BarEntry(90.000f, 1); // Feb
-        valueSet2.add(v2e2);
-        BarEntry v2e3 = new BarEntry(120.000f, 2); // Mar
-        valueSet2.add(v2e3);
-        BarEntry v2e4 = new BarEntry(60.000f, 3); // Apr
-        valueSet2.add(v2e4);
-        BarEntry v2e5 = new BarEntry(20.000f, 4); // May
-        valueSet2.add(v2e5);
-        BarEntry v2e6 = new BarEntry(80.000f, 5); // Jun
-        valueSet2.add(v2e6);
+        ArrayList<String> xVals = new ArrayList<>();
 
-        BarDataSet barDataSet1 = new BarDataSet(valueSet1, "Brand 1");
-        barDataSet1.setColor(Color.rgb(0, 155, 0));
-        BarDataSet barDataSet2 = new BarDataSet(valueSet2, "Brand 2");
-        barDataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
+        for (int i = 0; i < xValues.length; i++)
+            xVals.add(xValues[i]);
 
-        dataSets = new ArrayList<>();
-        dataSets.add(barDataSet1);
-        dataSets.add(barDataSet2);
-        return dataSets;
-    }
+        // Create pieDataSet
+        PieDataSet dataSet = new PieDataSet(yVals1, "");
+        dataSet.setSliceSpace(3);
+        dataSet.setSelectionShift(5);
 
-    /**
-     * Arreglo de los meses
-     * @return
-     */
-    private ArrayList<String> getXAxisValues() {
-        ArrayList<String> xAxis = new ArrayList<>();
-        xAxis.add("JAN");
-        xAxis.add("FEB");
-        xAxis.add("MAR");
-        xAxis.add("APR");
-        xAxis.add("MAY");
-        xAxis.add("JUN");
-        return xAxis;
+        // Ading colors
+        ArrayList<Integer> colors = new ArrayList<Integer>();
+
+        // Added my own colors
+        for (int c : MY_COLORS)
+            colors.add(c);
+
+        dataSet.setColors(colors);
+
+        // Create pie data object and set xValues and yValues and set it to the pieChart
+        PieData data = new PieData(xVals, dataSet);
+        // data.setValueFormatter(new DefaultValueFormatter());
+        // data.setValueFormatter(new PercentFormatter());
+
+        data.setValueFormatter(new MyValueFormatter());
+        data.setValueTextSize(11f);
+        data.setValueTextColor(Color.WHITE);
+
+        mChart.setData(data);
+
+        // undo all highlights
+        mChart.highlightValues(null);
+
+        // refresh/update pie chart
+        mChart.invalidate();
+
+        // animate piechart
+        mChart.animateXY(1400, 1400);
+
+        // Legends to show on bottom of the graph
+        Legend l = mChart.getLegend();
+        l.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
+        l.setXEntrySpace(7);
+        l.setYEntrySpace(5);
     }
 
     /**
      * Metodo nativo para los botones del action bar
+     *
      * @param item
      * @return
      */
@@ -119,6 +144,19 @@ public class ChartsActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public class MyValueFormatter implements ValueFormatter {
+        private DecimalFormat mFormat;
+
+        public MyValueFormatter() {
+            mFormat = new DecimalFormat("###,###,##0"); // use one decimal if needed
+        }
+
+        @Override
+        public String getFormattedValue(float value) {
+            return mFormat.format(value) + "";
+        }
     }
 
     /**

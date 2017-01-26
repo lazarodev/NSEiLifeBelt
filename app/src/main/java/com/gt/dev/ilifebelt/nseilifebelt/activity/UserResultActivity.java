@@ -90,6 +90,27 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
         } else if (nse.equals("C-")) {
             collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_cless);
             tvNSE.setText(getString(R.string.cless_nse_text));
+        } else if (nse.equals("D2")) {
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_e);
+            tvNSE.setText(getString(R.string.e_nse_text));
+        } else if (nse.equals("D1")) {
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_d);
+        } else if (nse.equals("C3")) {
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_dplus);
+            tvNSE.setText(getString(R.string.d_nse_text));
+            tvNSE.setText(getString(R.string.dplus_nse_text));
+        } else if (nse.equals("C2")) {
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_cless);
+            tvNSE.setText(getString(R.string.cless_nse_text));
+        } else if (nse.equals("C1")) {
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_c);
+            tvNSE.setText(getString(R.string.c_nse_text));
+        } else if (nse.equals("B")) {
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_cplus);
+            tvNSE.setText(getString(R.string.cplus_nse_text));
+        } else if (nse.equals("A")) {
+            collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_ab);
+            tvNSE.setText(getString(R.string.ab_nse_text));
         }
     }
 
@@ -147,6 +168,7 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
     /**
      * Metodo nativo implmementado por la interfaz,
      * donde indica la funcionalidad del FloatingActionButton.
+     *
      * @param v
      */
     @Override
