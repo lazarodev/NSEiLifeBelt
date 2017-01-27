@@ -12,7 +12,6 @@ import android.widget.ListView;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
 import com.gt.dev.ilifebelt.nseilifebelt.adapter.Main;
 import com.gt.dev.ilifebelt.nseilifebelt.adapter.MainAdapter;
-import com.gt.dev.ilifebelt.nseilifebelt.fragments.RoomFragment;
 
 import java.util.ArrayList;
 
@@ -93,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                startActivity(new Intent(MainActivity.this, ChartsActivity.class));
+                startActivity(new Intent(MainActivity.this, ChartMainActivity.class));
                 break;
             case 1:
                 startActivity(new Intent(MainActivity.this, NSEActivity.class));
