@@ -1,31 +1,30 @@
 package com.gt.dev.ilifebelt.nseilifebelt.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.gt.dev.ilifebelt.nseilifebelt.R;
-import com.gt.dev.ilifebelt.nseilifebelt.adapter.Main;
-import com.gt.dev.ilifebelt.nseilifebelt.adapter.MainAdapter;
-
-import java.util.ArrayList;
+import com.gt.dev.ilifebelt.nseilifebelt.activity.charts.ChartMainActivity;
+import com.gt.dev.ilifebelt.nseilifebelt.adapter.Library;
 
 /**
  * En MainActivity se muestra el menu principal para que
  * el usuario pueda escoger una de las opciones presentadas.
  */
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ListView lvMain;
     private FloatingActionButton fab;
-    private ArrayList<Main> categoria = new ArrayList<>();
     private Toolbar toolbar;
+    private ImageButton ibCalcl, ibData, ibResult, ibAbout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,19 +48,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fab = (FloatingActionButton) findViewById(R.id.fab_main);
         fab.setOnClickListener(this);
 
-        lvMain = (ListView) findViewById(R.id.lv_main);
+        ibData = (ImageButton) findViewById(R.id.ib_data_main);
+        ibCalcl = (ImageButton) findViewById(R.id.ib_calculator_main);
+        ibResult = (ImageButton) findViewById(R.id.ib_result_main);
+        ibAbout = (ImageButton) findViewById(R.id.ib_about_main);
 
-        // Items
-        categoria.add(new Main("Datos NSE", "Estadisticas demograficas", R.drawable.ic_assessment_white_48dp));
-        categoria.add(new Main("NSE México", "Calcula tus NSE en 1 minuto", R.drawable.ic_border_color_white_48dp));
-        categoria.add(new Main("NSE Guatemala", "Calcula tu NSE en 1 minuto", R.drawable.ic_border_color_white_48dp));
-        categoria.add(new Main("Resultados", "Lista de resultados NSE", R.drawable.ic_assignment_white_48dp));
-        categoria.add(new Main("Acerca de iLifeBelt", "Informacion de iLifebelt", R.drawable.ic_person_pin_white_48dp));
-
-        // Adaptador
-        MainAdapter adapter = new MainAdapter(categoria, this);
-        lvMain.setAdapter(adapter);
-        lvMain.setOnItemClickListener(this);
+        ibData.setOnClickListener(this);
+        ibCalcl.setOnClickListener(this);
+        ibResult.setOnClickListener(this);
+        ibAbout.setOnClickListener(this);
     }
 
     /**
@@ -74,39 +69,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.fab_main:
                 //Do something the button when is pressed
-                startActivity(new Intent(MainActivity.this, NSEActivity.class));
+                selectCountry();
+                break;
+            case R.id.ib_data_main:
+                startActivity(new Intent(MainActivity.this, ChartMainActivity.class));
+                break;
+            case R.id.ib_calculator_main:
+                selectCountry();
+                break;
+            case R.id.ib_result_main:
+                startActivity(new Intent(MainActivity.this, LibraryActivity.class));
+                break;
+            case R.id.ib_about_main:
+                startActivity(new Intent(MainActivity.this, AboutActivity.class));
                 break;
         }
     }
 
-    /**
-     * Seteamos las funciones que realizara cada item al momento de ser
-     * presionado por posicion.
-     *
-     * @param parent
-     * @param view
-     * @param position
-     * @param id
-     */
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position) {
-            case 0:
-                startActivity(new Intent(MainActivity.this, ChartMainActivity.class));
-                break;
-            case 1:
-                startActivity(new Intent(MainActivity.this, NSEActivity.class));
-                break;
-            case 2:
-                startActivity(new Intent(MainActivity.this, GtNSEActivity.class));
-                break;
-            case 3:
-                startActivity(new Intent(MainActivity.this, LibraryActivity.class));
-                break;
-            case 4:
-                startActivity(new Intent(MainActivity.this, AboutActivity.class));
-                break;
-        }
+    private void selectCountry() {
+        DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case DialogInterface.BUTTON_POSITIVE:
+                        startActivity(new Intent(MainActivity.this, GtNSEActivity.class));
+                        break;
+                    case DialogInterface.BUTTON_NEGATIVE:
+                        startActivity(new Intent(MainActivity.this, NSEActivity.class));
+                        break;
+                }
+            }
+        };
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.country_select_question)).setPositiveButton(getString(R.string.guatemala_title), dialogClickListener)
+                .setNegativeButton(getString(R.string.mexico_title), dialogClickListener).show();
     }
 
     /**

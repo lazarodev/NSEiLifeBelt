@@ -36,7 +36,7 @@
         <activity
             android:name=".activity.NSEActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.QualitiesActivity" />
+        <activity android:name=".activity.charts.QualitiesActivity" />
         <activity android:name=".activity.ResultActivity" />
         <activity android:name=".activity.LibraryActivity" />
         <activity
@@ -55,10 +55,11 @@
             android:name=".activity.GtNSEActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.GTResultActivity" />
-        <activity android:name=".activity.ChartMainActivity" />
-        <activity android:name=".activity.DefectsActivity" />
-        <activity android:name=".activity.ReligionActivity" />
-        <activity android:name=".activity.HappinessActivity"></activity>
+        <activity android:name=".activity.charts.ChartMainActivity" />
+        <activity android:name=".activity.charts.DefectsActivity" />
+        <activity android:name=".activity.charts.ReligionActivity" />
+        <activity android:name=".activity.charts.HappinessActivity" />
+        <activity android:name=".activity.IlifebeltWelcomeActivity"></activity>
     </application>
 
 </manifest>

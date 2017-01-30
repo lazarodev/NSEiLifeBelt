@@ -32,6 +32,7 @@ dependencies {
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     compile 'com.github.PhilJay:MPAndroidChart:v2.0.9'
     compile 'com.github.fcannizzaro:material-stepper:1.2.2'
+    compile 'com.stephentuso:welcome:0.7.2'
 
     //Checking the CVS Version control
 }

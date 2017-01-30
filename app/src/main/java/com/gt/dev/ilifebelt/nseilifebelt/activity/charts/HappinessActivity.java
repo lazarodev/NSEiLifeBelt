@@ -1,8 +1,8 @@
-package com.gt.dev.ilifebelt.nseilifebelt.activity;
+package com.gt.dev.ilifebelt.nseilifebelt.activity.charts;
 
 import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -19,15 +19,12 @@ import com.gt.dev.ilifebelt.nseilifebelt.R;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-/**
- * Clase que contiene las estadisticas a mostrar
- */
-public class QualitiesActivity extends AppCompatActivity {
+public class HappinessActivity extends AppCompatActivity {
 
     private PieChart mChart;
 
-    private int[] yValues = {48, 14, 13, 13, 3};
-    private String[] xValues = {"Trabajadores", "Hospitalarios", "Solidarios", "Optimistas", "Honestos"};
+    private int[] yValues = {54, 37, 9};
+    private String[] xValues = {"Es muy feliz", "Es razonablemente fleiz", "Es infeliz"};
 
     //Colors for different sections in piechart
     public static final int[] MY_COLORS = {
@@ -38,22 +35,21 @@ public class QualitiesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_charts);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Datos estadisticos NSE");
+        setContentView(R.layout.activity_happiness);
+
         startVars();
 
-        setdataForPieChart();
+        setDataForPieChart();
     }
 
-    /**
-     * Metodo que inicializa todas las variables
-     */
     private void startVars() {
-        mChart = (PieChart) findViewById(R.id.piechart_chart);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mChart = (PieChart) findViewById(R.id.piechart_happiness);
 
         // mChart.setUsePercenValues(true)
-        mChart.setDescription("Cualidades de los guatemaltecos");
+        mChart.setDescription(getString(R.string.felicity_description));
 
         mChart.setRotationEnabled(true);
 
@@ -64,7 +60,7 @@ public class QualitiesActivity extends AppCompatActivity {
                 if (e == null)
                     return;
 
-                Toast.makeText(QualitiesActivity.this, xValues[e.getXIndex()] + "is " + e.getVal() + "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HappinessActivity.this, xValues[e.getXIndex()] + "is " + e.getVal() + "", Toast.LENGTH_SHORT).show();
 
             }
 
@@ -73,12 +69,9 @@ public class QualitiesActivity extends AppCompatActivity {
 
             }
         });
-
-        // Setting smaple Data for Pie Chart
-
     }
 
-    public void setdataForPieChart() {
+    public void setDataForPieChart() {
         ArrayList<Entry> yVals1 = new ArrayList<>();
 
         for (int i = 0; i < yValues.length; i++)
@@ -130,22 +123,6 @@ public class QualitiesActivity extends AppCompatActivity {
         l.setYEntrySpace(5);
     }
 
-    /**
-     * Metodo nativo para los botones del action bar
-     *
-     * @param item
-     * @return
-     */
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
     public class MyValueFormatter implements ValueFormatter {
         private DecimalFormat mFormat;
 
@@ -159,17 +136,21 @@ public class QualitiesActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * Metodo nativo cuando la actividad entra en background.
-     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     protected void onPause() {
         super.onPause();
     }
 
-    /**
-     * Metodo nativo cuando la actividad regresa del background.
-     */
     @Override
     protected void onResume() {
         super.onResume();

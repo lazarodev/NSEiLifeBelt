@@ -1,8 +1,8 @@
-package com.gt.dev.ilifebelt.nseilifebelt.activity;
+package com.gt.dev.ilifebelt.nseilifebelt.activity.charts;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -19,14 +19,17 @@ import com.gt.dev.ilifebelt.nseilifebelt.R;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class DefectsActivity extends AppCompatActivity {
+/**
+ * Clase que contiene las estadisticas a mostrar
+ */
+public class QualitiesActivity extends AppCompatActivity {
 
     private PieChart mChart;
 
-    private int[] yValues = {39, 23, 23};
-    private String[] xValues = {"Impuntuales, corruptos y viciosos", "Problemáticos y egoístas", "Conformistas y pesimistas"};
+    private int[] yValues = {48, 14, 13, 13, 3};
+    private String[] xValues = {"Trabajadores", "Hospitalarios", "Solidarios", "Optimistas", "Honestos"};
 
-    // Colors for different sections in piechart
+    //Colors for different sections in piechart
     public static final int[] MY_COLORS = {
             Color.rgb(84, 124, 101), Color.rgb(64, 64, 64), Color.rgb(153, 19, 0),
             Color.rgb(38, 40, 53), Color.rgb(215, 60, 55)
@@ -35,49 +38,53 @@ public class DefectsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_defects);
-
+        setContentView(R.layout.activity_charts);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Datos estadisticos NSE");
         startVars();
 
-        setDataForPieChart();
+        setdataForPieChart();
     }
 
+    /**
+     * Metodo que inicializa todas las variables
+     */
     private void startVars() {
+        mChart = (PieChart) findViewById(R.id.piechart_chart);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        mChart = (PieChart) findViewById(R.id.piechart_defects);
-
-        // mChart.setUsetPercentValues(true);
-        mChart.setDescription("Defectos de los guatemaltecos");
+        // mChart.setUsePercenValues(true)
+        mChart.setDescription("Cualidades de los guatemaltecos");
 
         mChart.setRotationEnabled(true);
 
         mChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
-                // Display msg when value is selected
+                // display msg when vlaue selected
                 if (e == null)
                     return;
 
-                Toast.makeText(DefectsActivity.this, xValues[e.getXIndex()] + "is" + e.getVal() + "", Toast.LENGTH_SHORT).show();
+                Toast.makeText(QualitiesActivity.this, xValues[e.getXIndex()] + "is " + e.getVal() + "", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onNothingSelected() {
 
-
             }
         });
+
+        // Setting smaple Data for Pie Chart
+
     }
 
-    public void setDataForPieChart() {
-        ArrayList<Entry> yVals1 = new ArrayList<Entry>();
+    public void setdataForPieChart() {
+        ArrayList<Entry> yVals1 = new ArrayList<>();
 
         for (int i = 0; i < yValues.length; i++)
             yVals1.add(new Entry(yValues[i], i));
 
-        ArrayList<String> xVals = new ArrayList<String>();
+        ArrayList<String> xVals = new ArrayList<>();
 
         for (int i = 0; i < xValues.length; i++)
             xVals.add(xValues[i]);
@@ -87,7 +94,7 @@ public class DefectsActivity extends AppCompatActivity {
         dataSet.setSliceSpace(3);
         dataSet.setSelectionShift(5);
 
-        // Adding colors
+        // Ading colors
         ArrayList<Integer> colors = new ArrayList<Integer>();
 
         // Added my own colors
@@ -96,8 +103,10 @@ public class DefectsActivity extends AppCompatActivity {
 
         dataSet.setColors(colors);
 
-        // Create pie data object and set xValues and set it to the pieChart
+        // Create pie data object and set xValues and yValues and set it to the pieChart
         PieData data = new PieData(xVals, dataSet);
+        // data.setValueFormatter(new DefaultValueFormatter());
+        // data.setValueFormatter(new PercentFormatter());
 
         data.setValueFormatter(new MyValueFormatter());
         data.setValueTextSize(11f);
@@ -106,9 +115,12 @@ public class DefectsActivity extends AppCompatActivity {
         mChart.setData(data);
 
         // undo all highlights
+        mChart.highlightValues(null);
+
+        // refresh/update pie chart
         mChart.invalidate();
 
-        // animate pieChart
+        // animate piechart
         mChart.animateXY(1400, 1400);
 
         // Legends to show on bottom of the graph
@@ -116,6 +128,22 @@ public class DefectsActivity extends AppCompatActivity {
         l.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
         l.setXEntrySpace(7);
         l.setYEntrySpace(5);
+    }
+
+    /**
+     * Metodo nativo para los botones del action bar
+     *
+     * @param item
+     * @return
+     */
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public class MyValueFormatter implements ValueFormatter {
@@ -131,23 +159,17 @@ public class DefectsActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
+    /**
+     * Metodo nativo cuando la actividad entra en background.
+     */
     @Override
     protected void onPause() {
         super.onPause();
     }
 
+    /**
+     * Metodo nativo cuando la actividad regresa del background.
+     */
     @Override
     protected void onResume() {
         super.onResume();

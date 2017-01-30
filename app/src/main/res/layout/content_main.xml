@@ -5,14 +5,56 @@
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackgroundMain"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.gt.dev.ilifebelt.nseilifebelt.activity.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <ListView
-        android:id="@+id/lv_main"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ib_data_main"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:background="@drawable/datos_icono" />
+
+        <ImageButton
+            android:id="@+id/ib_calculator_main"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:background="@drawable/calculadora_icono" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ib_result_main"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:background="@drawable/resultados_icono" />
+
+        <ImageButton
+            android:id="@+id/ib_about_main"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
+            android:background="@drawable/nosostros_icono" />
+
+    </LinearLayout>
 
 </LinearLayout>

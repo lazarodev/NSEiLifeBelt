@@ -122,4 +122,20 @@
     <string name="gt_creditcard_question">¿Tienes tarjeta de crédito?</string>
     <string name="gt_homebreak_question">¿Tienes casa de descanso fuera de la ciudad?</string>
     <string name="gt_visa_question">¿En estos momentos tienes visa americana vigente para viajar a Estados Unidos?</string>
+
+    <string name="qualities_title">Cualidades</string>
+    <string name="defects_title">Defectos</string>
+    <string name="religion_title">Religión</string>
+    <string name="felicity_title">Felicidad</string>
+
+    <string name="qualities_description">Cualidades de los guatemalatecos</string>
+    <string name="defects_description">Defectos de los guatemaltecos</string>
+    <string name="religion_description">Religiones entre los guatemaltecos</string>
+    <string name="felicity_description">¿Los guatemaltecos son felices?</string>
+
+    <string name="country_select_question">¿Seleccione el país donde se encuentra?</string>
+    <string name="guatemala_title">Guatemala</string>
+    <string name="mexico_title">México</string>
+
+
 </resources>

@@ -1,4 +1,4 @@
-package com.gt.dev.ilifebelt.nseilifebelt.activity;
+package com.gt.dev.ilifebelt.nseilifebelt.activity.charts;
 
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -19,14 +19,14 @@ import com.gt.dev.ilifebelt.nseilifebelt.R;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class HappinessActivity extends AppCompatActivity {
+public class DefectsActivity extends AppCompatActivity {
 
     private PieChart mChart;
 
-    private int[] yValues = {54, 37, 9};
-    private String[] xValues = {"Es muy feliz", "Es razonablemente fleiz", "Es infeliz"};
+    private int[] yValues = {39, 23, 23};
+    private String[] xValues = {"Impuntuales, corruptos y viciosos", "Problemáticos y egoístas", "Conformistas y pesimistas"};
 
-    //Colors for different sections in piechart
+    // Colors for different sections in piechart
     public static final int[] MY_COLORS = {
             Color.rgb(84, 124, 101), Color.rgb(64, 64, 64), Color.rgb(153, 19, 0),
             Color.rgb(38, 40, 53), Color.rgb(215, 60, 55)
@@ -35,7 +35,7 @@ public class HappinessActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_happiness);
+        setContentView(R.layout.activity_defects);
 
         startVars();
 
@@ -46,38 +46,38 @@ public class HappinessActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mChart = (PieChart) findViewById(R.id.piechart_happiness);
+        mChart = (PieChart) findViewById(R.id.piechart_defects);
 
-        // mChart.setUsePercenValues(true)
-        mChart.setDescription("¿Son felices los guatemaltecos?");
+        // mChart.setUsetPercentValues(true);
+        mChart.setDescription("Defectos de los guatemaltecos");
 
         mChart.setRotationEnabled(true);
 
         mChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
             @Override
             public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
-                // display msg when vlaue selected
+                // Display msg when value is selected
                 if (e == null)
                     return;
 
-                Toast.makeText(HappinessActivity.this, xValues[e.getXIndex()] + "is " + e.getVal() + "", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(DefectsActivity.this, xValues[e.getXIndex()] + "is" + e.getVal() + "", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onNothingSelected() {
+
 
             }
         });
     }
 
     public void setDataForPieChart() {
-        ArrayList<Entry> yVals1 = new ArrayList<>();
+        ArrayList<Entry> yVals1 = new ArrayList<Entry>();
 
         for (int i = 0; i < yValues.length; i++)
             yVals1.add(new Entry(yValues[i], i));
 
-        ArrayList<String> xVals = new ArrayList<>();
+        ArrayList<String> xVals = new ArrayList<String>();
 
         for (int i = 0; i < xValues.length; i++)
             xVals.add(xValues[i]);
@@ -87,7 +87,7 @@ public class HappinessActivity extends AppCompatActivity {
         dataSet.setSliceSpace(3);
         dataSet.setSelectionShift(5);
 
-        // Ading colors
+        // Adding colors
         ArrayList<Integer> colors = new ArrayList<Integer>();
 
         // Added my own colors
@@ -96,10 +96,8 @@ public class HappinessActivity extends AppCompatActivity {
 
         dataSet.setColors(colors);
 
-        // Create pie data object and set xValues and yValues and set it to the pieChart
+        // Create pie data object and set xValues and set it to the pieChart
         PieData data = new PieData(xVals, dataSet);
-        // data.setValueFormatter(new DefaultValueFormatter());
-        // data.setValueFormatter(new PercentFormatter());
 
         data.setValueFormatter(new MyValueFormatter());
         data.setValueTextSize(11f);
@@ -108,12 +106,9 @@ public class HappinessActivity extends AppCompatActivity {
         mChart.setData(data);
 
         // undo all highlights
-        mChart.highlightValues(null);
-
-        // refresh/update pie chart
         mChart.invalidate();
 
-        // animate piechart
+        // animate pieChart
         mChart.animateXY(1400, 1400);
 
         // Legends to show on bottom of the graph
@@ -138,11 +133,13 @@ public class HappinessActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
             case android.R.id.home:
                 finish();
                 break;
         }
+
         return super.onOptionsItemSelected(item);
     }
 

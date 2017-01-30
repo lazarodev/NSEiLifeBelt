@@ -1,4 +1,4 @@
-package com.gt.dev.ilifebelt.nseilifebelt.activity;
+package com.gt.dev.ilifebelt.nseilifebelt.activity.charts;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
