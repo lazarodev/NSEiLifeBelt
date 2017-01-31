@@ -4,12 +4,50 @@
     android:id="@+id/activity_chart_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackgroundMain"
     android:orientation="vertical"
     tools:context="com.gt.dev.ilifebelt.nseilifebelt.activity.charts.ChartMainActivity">
 
-    <ListView
-        android:id="@+id/lv_chart_main"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ListView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ib_qualities_chart"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:background="@drawable/cualidades_icono" />
+
+        <ImageButton
+            android:id="@+id/ib_defects_chart"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:background="@drawable/defectos_icono" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/ib_relgion_chart"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:background="@drawable/religion_icono" />
+
+        <ImageButton
+            android:id="@+id/ib_happiness_chart"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:background="@drawable/felicidad_icono" />
+
+    </LinearLayout>
 
 </LinearLayout>

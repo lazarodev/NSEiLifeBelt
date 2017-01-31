@@ -45,6 +45,7 @@ public class HappinessActivity extends AppCompatActivity {
     private void startVars() {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Felicidad");
 
         mChart = (PieChart) findViewById(R.id.piechart_happiness);
 

@@ -11,6 +11,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.gt.dev.ilifebelt.nseilifebelt.activity.charts.DefectsActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Defectos de los guatemaltecos" />
+
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart_defects"
         android:layout_width="match_parent"

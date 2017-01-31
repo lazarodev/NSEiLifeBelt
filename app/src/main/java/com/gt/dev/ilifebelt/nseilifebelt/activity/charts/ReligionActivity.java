@@ -33,6 +33,7 @@ public class ReligionActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Religión");
     }
 
     private void setViewPager(ViewPager viewPager) {

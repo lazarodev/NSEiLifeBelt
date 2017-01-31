@@ -45,6 +45,7 @@ public class DefectsActivity extends AppCompatActivity {
     private void startVars() {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Defectos");
 
         mChart = (PieChart) findViewById(R.id.piechart_defects);
 

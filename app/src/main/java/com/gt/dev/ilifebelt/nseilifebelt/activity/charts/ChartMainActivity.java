@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.gt.dev.ilifebelt.nseilifebelt.R;
@@ -14,10 +15,9 @@ import com.gt.dev.ilifebelt.nseilifebelt.adapter.MainAdapter;
 
 import java.util.ArrayList;
 
-public class ChartMainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ChartMainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ListView lvChartMain;
-    private ArrayList<Main> categoria = new ArrayList<>();
+    private ImageButton ibDefects, ibHappiness, ibQualities, ibReligion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,37 +30,18 @@ public class ChartMainActivity extends AppCompatActivity implements AdapterView.
     private void startVars() {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Datos NSEx");
 
-        lvChartMain = (ListView) findViewById(R.id.lv_chart_main);
+        ibDefects = (ImageButton) findViewById(R.id.ib_defects_chart);
+        ibReligion = (ImageButton) findViewById(R.id.ib_relgion_chart);
+        ibQualities = (ImageButton) findViewById(R.id.ib_qualities_chart);
+        ibHappiness = (ImageButton) findViewById(R.id.ib_happiness_chart);
 
-        // Agregando items para el listview
-        categoria.add(new Main(getString(R.string.qualities_title), getString(R.string.qualities_description), R.drawable.positive));
-        categoria.add(new Main(getString(R.string.defects_title), getString(R.string.defects_description), R.drawable.negative));
-        categoria.add(new Main(getString(R.string.religion_title), getString(R.string.religion_description), R.drawable.church));
-        categoria.add(new Main(getString(R.string.felicity_title), getString(R.string.felicity_description), R.drawable.happy));
+        ibDefects.setOnClickListener(this);
+        ibReligion.setOnClickListener(this);
+        ibQualities.setOnClickListener(this);
+        ibHappiness.setOnClickListener(this);
 
-        // Adaptador
-        MainAdapter adapter = new MainAdapter(categoria, this);
-        lvChartMain.setAdapter(adapter);
-        lvChartMain.setOnItemClickListener(this);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        switch (position) {
-            case 0:
-                startActivity(new Intent(ChartMainActivity.this, QualitiesActivity.class));
-                break;
-            case 1:
-                startActivity(new Intent(ChartMainActivity.this, DefectsActivity.class));
-                break;
-            case 2:
-                startActivity(new Intent(ChartMainActivity.this, ReligionActivity.class));
-                break;
-            case 3:
-                startActivity(new Intent(ChartMainActivity.this, HappinessActivity.class));
-                break;
-        }
     }
 
     @Override
@@ -81,5 +62,23 @@ public class ChartMainActivity extends AppCompatActivity implements AdapterView.
     @Override
     protected void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.ib_defects_chart:
+                startActivity(new Intent(ChartMainActivity.this, DefectsActivity.class));
+                break;
+            case R.id.ib_qualities_chart:
+                startActivity(new Intent(ChartMainActivity.this, QualitiesActivity.class));
+                break;
+            case R.id.ib_relgion_chart:
+                startActivity(new Intent(ChartMainActivity.this, ReligionActivity.class));
+                break;
+            case R.id.ib_happiness_chart:
+                startActivity(new Intent(ChartMainActivity.this, HappinessActivity.class));
+                break;
+        }
     }
 }

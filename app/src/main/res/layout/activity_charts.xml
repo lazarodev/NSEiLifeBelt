@@ -7,6 +7,11 @@
     android:orientation="vertical"
     tools:context="com.gt.dev.ilifebelt.nseilifebelt.activity.charts.QualitiesActivity">
 
+    <TextView
+        android:text="Cuaidades de los guatemaltecos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart_chart"
         android:layout_width="match_parent"

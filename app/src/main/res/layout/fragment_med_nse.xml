@@ -5,6 +5,11 @@
     android:layout_margin="16dp"
     android:orientation="vertical">
 
+    <TextView
+        android:text="Niveles medios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart_religion_med_nse"
         android:layout_width="match_parent"

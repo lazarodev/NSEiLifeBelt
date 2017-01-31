@@ -53,7 +53,7 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="165dp"
             android:layout_height="165dp"
-            android:background="@drawable/nosostros_icono" />
+            android:background="@drawable/nosotros_icono" />
 
     </LinearLayout>
 

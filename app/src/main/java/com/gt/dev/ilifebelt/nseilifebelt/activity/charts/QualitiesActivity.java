@@ -40,7 +40,7 @@ public class QualitiesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charts);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Datos estadisticos NSE");
+        getSupportActionBar().setTitle("Cualidades");
         startVars();
 
         setdataForPieChart();
