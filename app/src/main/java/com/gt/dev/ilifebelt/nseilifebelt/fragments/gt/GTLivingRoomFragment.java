@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
@@ -56,10 +57,12 @@ public class GTLivingRoomFragment extends AbstractStep implements View.OnClickLi
             case R.id.btn_si_livingroom:
                 living = 758;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_no_livingroom:
                 living = 0;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

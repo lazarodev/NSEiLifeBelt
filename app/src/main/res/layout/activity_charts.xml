@@ -8,9 +8,11 @@
     tools:context="com.gt.dev.ilifebelt.nseilifebelt.activity.charts.QualitiesActivity">
 
     <TextView
-        android:text="Cuaidades de los guatemaltecos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Cualidades de los guatemaltecos"
+        android:textSize="16sp" />
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart_chart"

@@ -98,54 +98,67 @@ public class StudyFragment extends AbstractStep implements AdapterView.OnItemCli
             case 0:
                 study = 0;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 1:
                 study = 0;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 2:
                 study = 22;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 3:
                 study = 22;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 4:
                 study = 22;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 5:
                 study = 38;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 6:
                 study = 38;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 7:
                 study = 38;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 8:
                 study = 38;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 9:
                 study = 52;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 10:
                 study = 52;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 11:
                 study = 72;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case 12:
                 study = 72;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

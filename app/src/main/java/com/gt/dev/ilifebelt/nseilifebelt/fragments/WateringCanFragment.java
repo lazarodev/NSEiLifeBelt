@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
@@ -58,10 +59,12 @@ public class WateringCanFragment extends AbstractStep implements View.OnClickLis
             case R.id.btn_yes_water:
                 watering = 10;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_no_water:
                 watering = 0;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

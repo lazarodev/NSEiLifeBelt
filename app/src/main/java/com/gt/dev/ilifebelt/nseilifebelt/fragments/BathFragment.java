@@ -65,22 +65,27 @@ public class BathFragment extends AbstractStep implements View.OnClickListener {
                 onNext();
                 bath = 0;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_01_bath:
                 bath = 16;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_02_bath:
                 bath = 36;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_03_bath:
                 bath = 36;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_04_bath:
                 bath = 52;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

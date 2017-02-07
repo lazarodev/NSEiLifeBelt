@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
@@ -68,30 +69,37 @@ public class GTCarFragment extends AbstractStep implements View.OnClickListener 
             case R.id.btn_0_gtcar:
                 cars = 0;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_1_gtcar:
                 cars = 750;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_2_gtcar:
                 cars = 1890;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_3_gtcar:
                 cars = 3174;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_4_gtcar:
                 cars = 4616;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_5_gtcar:
                 cars = 6025;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_6_gtcar:
                 cars = 7850;
                 click++;
+                Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

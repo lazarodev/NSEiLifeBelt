@@ -21,24 +21,26 @@
             android:id="@+id/btn_si_gtvisa"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
-            android:textStyle="italic"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:background="@drawable/button_pressed01"
             android:text="Si"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_no_gtvisa"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
-            android:textStyle="italic"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_pressed01"
             android:text="No"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="italic" />
 
     </LinearLayout>
 

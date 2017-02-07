@@ -112,13 +112,13 @@
     <string name="watering_title_fragment">Regadera</string>
     <string name="title_activity_contact">ContactActivity</string>
 
-    <string name="gt_bathroom_question">¿Cuántos baños tiene su casa, y de estos ¿cuántos con regadera?</string>
+    <string name="gt_bathroom_question">¿Cuántos baños tiene su casa, y de estos cuántos con regadera?</string>
     <string name="gt_livingroom_question">¿Tiene sala familiar independiente a la sala familiar independiente?</string>
     <string name="gt_employes_question">¿Cuántos empleados tiene para los quehaceres de la casa?</string>
     <string name="gt_car_question">¿Cuantos automóviles tiene?</string>
     <string name="gt_televisor_question">¿Cuanto televisores tiene?</string>
     <string name="gt_phone_question">¿Tiene celular de factura?</string>
-    <string name="gt_secadora_question">¿En su casa tien secadora de ropa?</string>
+    <string name="gt_secadora_question">¿En su casa tiene secadora de ropa?</string>
     <string name="gt_creditcard_question">¿Tienes tarjeta de crédito?</string>
     <string name="gt_homebreak_question">¿Tienes casa de descanso fuera de la ciudad?</string>
     <string name="gt_visa_question">¿En estos momentos tienes visa americana vigente para viajar a Estados Unidos?</string>

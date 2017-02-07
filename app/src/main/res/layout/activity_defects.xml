@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Defectos de los guatemaltecos" />
+        android:text="Defectos de los guatemaltecos"
+        android:textSize="16sp" />
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart_defects"

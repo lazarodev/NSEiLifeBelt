@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // Seteamos el titulo de la app
         getSupportActionBar().setTitle("iLifeBelt NSE");
+
         // Seteamos el subtitulo de la app
-        getSupportActionBar().setSubtitle("Nivel Socio Economico");
+        getSupportActionBar().setSubtitle("Nivel Socio-Económico");
 
         startVars();
     }

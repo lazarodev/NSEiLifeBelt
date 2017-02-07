@@ -23,11 +23,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textStyle="italic"
+            android:background="@drawable/button_pressed01"
             android:text="Ningun empleado"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="italic" />
 
 
         <Button
@@ -35,12 +36,13 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
             android:layout_marginTop="20dp"
+            android:background="@drawable/button_pressed01"
             android:text="1 empleado"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="italic" />
 
 
         <Button
@@ -48,12 +50,13 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
             android:layout_marginTop="20dp"
+            android:background="@drawable/button_pressed01"
             android:text="2 empleados"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="italic" />
 
 
         <Button
@@ -61,24 +64,26 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="italic"
             android:layout_marginTop="20dp"
+            android:background="@drawable/button_pressed01"
             android:text="3 empleados"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="italic" />
 
         <Button
             android:id="@+id/btn_4_gtemployes"
-            android:textStyle="italic"
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:background="@drawable/button_pressed01"
             android:text="4 empleados o más"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="italic" />
 
     </LinearLayout>
 
