@@ -51,7 +51,7 @@ public class MedStatusFragment extends Fragment {
 
         mChart = (PieChart) v.findViewById(R.id.piechart_religion_med_nse);
 
-        mChart.setDescription("Niveles Medios");
+        mChart.setDescription(getString(R.string.contra_poder_credits));
 
         mChart.setRotationEnabled(true);
 

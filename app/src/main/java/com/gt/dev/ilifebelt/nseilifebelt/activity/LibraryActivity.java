@@ -6,14 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.activeandroid.query.Select;
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
 import com.gt.dev.ilifebelt.nseilifebelt.adapter.Library;
 import com.gt.dev.ilifebelt.nseilifebelt.adapter.LibraryAdapter;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 import com.gt.dev.ilifebelt.nseilifebelt.model.Results;
 
 import java.util.ArrayList;
@@ -29,6 +29,8 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
     //private ArrayAdapter inventoryItemsAdapter;
     private String name;
     private LibraryAdapter adapter;
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,13 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
         lvResults = (ListView) findViewById(R.id.lv_library_result);
         lvResults.setOnItemClickListener(this);
         showInventorylist();
+
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     /**
@@ -96,6 +105,7 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
 
     /**
      * Metodo nativo cuando se presiona algun boton del actionbar
+     *
      * @param item
      * @return
      */

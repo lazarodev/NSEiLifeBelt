@@ -7,6 +7,8 @@ import android.view.WindowManager;
 import com.activeandroid.ActiveAndroid;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
+import com.google.android.gms.analytics.Tracker;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.gt.GTBathRoomFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.gt.GTCarFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.gt.GTCreditCarFragment;
@@ -21,6 +23,8 @@ import com.gt.dev.ilifebelt.nseilifebelt.fragments.gt.GTVisaFragment;
 public class GtNSEActivity extends TabStepper {
 
     private int i = 1;
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,12 @@ public class GtNSEActivity extends TabStepper {
 
         super.onCreate(savedInstanceState);
 
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     private AbstractStep createFragment(AbstractStep fragment) {

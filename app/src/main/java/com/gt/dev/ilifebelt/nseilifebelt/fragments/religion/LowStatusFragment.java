@@ -55,7 +55,7 @@ public class LowStatusFragment extends Fragment {
 
         mChart = (PieChart) v.findViewById(R.id.piechart_religion_low_nse);
 
-        mChart.setDescription("Niveles Bajos");
+        mChart.setDescription(getString(R.string.contra_poder_credits));
 
         mChart.setRotationEnabled(true);
 

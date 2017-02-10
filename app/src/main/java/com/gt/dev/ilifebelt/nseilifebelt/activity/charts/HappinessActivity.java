@@ -1,8 +1,8 @@
 package com.gt.dev.ilifebelt.nseilifebelt.activity.charts;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -14,7 +14,9 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.Highlight;
 import com.github.mikephil.charting.utils.ValueFormatter;
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -25,6 +27,9 @@ public class HappinessActivity extends AppCompatActivity {
 
     private int[] yValues = {54, 37, 9};
     private String[] xValues = {"Es muy feliz", "Es razonablemente fleiz", "Es infeliz"};
+
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     //Colors for different sections in piechart
     public static final int[] MY_COLORS = {
@@ -40,6 +45,13 @@ public class HappinessActivity extends AppCompatActivity {
         startVars();
 
         setDataForPieChart();
+
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     private void startVars() {
@@ -50,7 +62,7 @@ public class HappinessActivity extends AppCompatActivity {
         mChart = (PieChart) findViewById(R.id.piechart_happiness);
 
         // mChart.setUsePercenValues(true)
-        mChart.setDescription(getString(R.string.felicity_description));
+        mChart.setDescription(getString(R.string.contra_poder_credits));
 
         mChart.setRotationEnabled(true);
 

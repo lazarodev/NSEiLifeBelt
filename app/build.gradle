@@ -33,6 +33,8 @@ dependencies {
     compile 'com.github.PhilJay:MPAndroidChart:v2.0.9'
     compile 'com.github.fcannizzaro:material-stepper:1.2.2'
     compile 'com.stephentuso:welcome:0.7.2'
+    compile 'com.google.android.gms:play-services-analytics:7.3.0'
 
     //Checking the CVS Version control
+    apply plugin: 'com.google.gms.google-services'
 }

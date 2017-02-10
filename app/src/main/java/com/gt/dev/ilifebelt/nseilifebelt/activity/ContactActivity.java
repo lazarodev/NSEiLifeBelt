@@ -4,18 +4,22 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 
 public class ContactActivity extends AppCompatActivity {
 
     private EditText etName, etEmail, etMessage;
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class ContactActivity extends AppCompatActivity {
         setContentView(R.layout.activity_contact);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         etName = (EditText) findViewById(R.id.et_name_contact);
         etEmail = (EditText) findViewById(R.id.et_email_contact);
@@ -39,6 +44,13 @@ public class ContactActivity extends AppCompatActivity {
                 }
             }
         });
+
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     private void sendEmail() {
@@ -62,4 +74,23 @@ public class ContactActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
 }

@@ -14,7 +14,9 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.Highlight;
 import com.github.mikephil.charting.utils.ValueFormatter;
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -25,6 +27,8 @@ import java.util.ArrayList;
 public class QualitiesActivity extends AppCompatActivity {
 
     private PieChart mChart;
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     private int[] yValues = {48, 14, 13, 13, 3};
     private String[] xValues = {"Trabajadores", "Hospitalarios", "Solidarios", "Optimistas", "Honestos"};
@@ -44,6 +48,13 @@ public class QualitiesActivity extends AppCompatActivity {
         startVars();
 
         setdataForPieChart();
+
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     /**
@@ -53,7 +64,7 @@ public class QualitiesActivity extends AppCompatActivity {
         mChart = (PieChart) findViewById(R.id.piechart_chart);
 
         // mChart.setUsePercenValues(true)
-        mChart.setDescription("Cualidades de los guatemaltecos");
+        mChart.setDescription(getString(R.string.contra_poder_credits));
 
         mChart.setRotationEnabled(true);
 

@@ -8,6 +8,9 @@ import android.view.WindowManager;
 import com.activeandroid.ActiveAndroid;
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.github.fcannizzaro.materialstepper.style.TabStepper;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.BathFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.CarsFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.FloorFragment;
@@ -16,6 +19,7 @@ import com.gt.dev.ilifebelt.nseilifebelt.fragments.SpotlightFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.StoveFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.StudyFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.WateringCanFragment;
+import com.gt.dev.ilifebelt.nseilifebelt.utility.Parameters;
 
 /**
  * Clase que extiende de la super clase TabStepper.
@@ -23,6 +27,8 @@ import com.gt.dev.ilifebelt.nseilifebelt.fragments.WateringCanFragment;
 public class NSEActivity extends TabStepper {
 
     private int i = 1;
+    private Tracker mTracker;
+    private MyApplication myApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +58,14 @@ public class NSEActivity extends TabStepper {
         addStep(createFragment(new StudyFragment()));
         //addStep(createFragment(new InfoUserFragment()));
 
+        startAnalytics();
+
         super.onCreate(savedInstanceState);
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     /**

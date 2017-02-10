@@ -9,7 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.religion.HighStatusFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.religion.LowStatusFragment;
 import com.gt.dev.ilifebelt.nseilifebelt.fragments.religion.MedStatusFragment;
@@ -21,6 +23,8 @@ public class ReligionActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,13 @@ public class ReligionActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Religión");
+
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     private void setViewPager(ViewPager viewPager) {

@@ -1,8 +1,8 @@
 package com.gt.dev.ilifebelt.nseilifebelt.activity.charts;
 
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -14,7 +14,9 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.Highlight;
 import com.github.mikephil.charting.utils.ValueFormatter;
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -22,6 +24,8 @@ import java.util.ArrayList;
 public class DefectsActivity extends AppCompatActivity {
 
     private PieChart mChart;
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     private int[] yValues = {39, 23, 23};
     private String[] xValues = {"Impuntuales, corruptos y viciosos", "Problemáticos y egoístas", "Conformistas y pesimistas"};
@@ -40,6 +44,13 @@ public class DefectsActivity extends AppCompatActivity {
         startVars();
 
         setDataForPieChart();
+
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     private void startVars() {
@@ -50,7 +61,7 @@ public class DefectsActivity extends AppCompatActivity {
         mChart = (PieChart) findViewById(R.id.piechart_defects);
 
         // mChart.setUsetPercentValues(true);
-        mChart.setDescription("Defectos de los guatemaltecos");
+        mChart.setDescription(getString(R.string.contra_poder_credits));
 
         mChart.setRotationEnabled(true);
 

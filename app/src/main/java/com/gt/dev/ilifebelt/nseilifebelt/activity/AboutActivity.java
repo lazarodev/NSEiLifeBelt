@@ -8,12 +8,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 
 /**
  * Actividad que contiene los creditos de desarrollo.
  */
 public class AboutActivity extends AppCompatActivity {
+
+    private Tracker mTracker;
+    private MyApplication myApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,12 @@ public class AboutActivity extends AppCompatActivity {
                 startActivity(new Intent(AboutActivity.this, ContactActivity.class));
             }
         });
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     /**
@@ -47,5 +58,15 @@ public class AboutActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }

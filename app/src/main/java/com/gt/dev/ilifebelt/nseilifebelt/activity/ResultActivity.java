@@ -2,14 +2,15 @@ package com.gt.dev.ilifebelt.nseilifebelt.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 import com.gt.dev.ilifebelt.nseilifebelt.model.Results;
 
 /**
@@ -22,6 +23,9 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     private EditText etName, etEmail;
     private String resultNSE;
     private String name, email;
+
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,13 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         btnCancel.setOnClickListener(this);
 
         getSource();
+
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     //Getting the data from the last activit with the nse result

@@ -9,11 +9,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
 import com.gt.dev.ilifebelt.nseilifebelt.activity.charts.ChartMainActivity;
-import com.gt.dev.ilifebelt.nseilifebelt.adapter.Library;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 
 /**
  * En MainActivity se muestra el menu principal para que
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FloatingActionButton fab;
     private Toolbar toolbar;
     private ImageButton ibCalcl, ibData, ibResult, ibAbout;
+    public static GoogleAnalytics analytics;
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +44,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getSupportActionBar().setSubtitle("Nivel Socio-Económico");
 
         startVars();
+
+        startAnalytics();
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     /**
@@ -122,4 +133,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
     }
+
 }

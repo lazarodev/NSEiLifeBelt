@@ -51,7 +51,7 @@ public class HighStatusFragment extends Fragment {
 
         mChart = (PieChart) v.findViewById(R.id.piechart_religion_high_nse);
 
-        mChart.setDescription("Niveles Altos");
+        mChart.setDescription(getString(R.string.contra_poder_credits));
 
         mChart.setRotationEnabled(true);
 

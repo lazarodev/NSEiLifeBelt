@@ -1,23 +1,21 @@
 package com.gt.dev.ilifebelt.nseilifebelt.activity.charts;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
-import android.widget.ListView;
 
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
-import com.gt.dev.ilifebelt.nseilifebelt.adapter.Main;
-import com.gt.dev.ilifebelt.nseilifebelt.adapter.MainAdapter;
-
-import java.util.ArrayList;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 
 public class ChartMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageButton ibDefects, ibHappiness, ibQualities, ibReligion;
+    private MyApplication myApp;
+    private Tracker mTracker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +23,7 @@ public class ChartMainActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_chart_main);
 
         startVars();
+        startAnalytics();
     }
 
     private void startVars() {
@@ -42,6 +41,11 @@ public class ChartMainActivity extends AppCompatActivity implements View.OnClick
         ibQualities.setOnClickListener(this);
         ibHappiness.setOnClickListener(this);
 
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     @Override

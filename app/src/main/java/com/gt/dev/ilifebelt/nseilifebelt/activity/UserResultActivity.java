@@ -2,20 +2,22 @@ package com.gt.dev.ilifebelt.nseilifebelt.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.activeandroid.query.Delete;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
+import com.gt.dev.ilifebelt.nseilifebelt.controller.MyApplication;
 import com.gt.dev.ilifebelt.nseilifebelt.model.Results;
 
 /**
@@ -28,6 +30,9 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
     private TextView tvName, tvEmail, tvNSE;
     private CollapsingToolbarLayout collapsingToolbarLayout;
 
+    private MyApplication myApp;
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +40,8 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
         startVars();
 
         getSource();
+
+        startAnalytics();
     }
 
     /**
@@ -95,6 +102,7 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
             tvNSE.setText(getString(R.string.e_nse_text));
         } else if (nse.equals("D1")) {
             collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_d);
+            tvNSE.setText(getString(R.string.e_nse_text));
         } else if (nse.equals("C3")) {
             collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_dplus);
             tvNSE.setText(getString(R.string.d_nse_text));
@@ -112,6 +120,11 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
             collapsingToolbarLayout.setBackgroundResource(R.drawable.nivel_ab);
             tvNSE.setText(getString(R.string.ab_nse_text));
         }
+    }
+
+    private void startAnalytics() {
+        myApp = (MyApplication) getApplication();
+        mTracker = myApp.getDefaultTracker();
     }
 
     /**
@@ -178,5 +191,15 @@ public class UserResultActivity extends AppCompatActivity implements View.OnClic
                 deleteDialog();
                 break;
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 }

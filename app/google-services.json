@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "616623870908",
+    "firebase_url": "https://nsex-ilifebelt-android.firebaseio.com",
+    "project_id": "nsex-ilifebelt-android",
+    "storage_bucket": "nsex-ilifebelt-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:616623870908:android:d546e4b206e5b97f",
+        "android_client_info": {
+          "package_name": "com.gt.dev.ilifebelt.nseilifebelt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "616623870908-6k51umptjr1iq9mp9pik2naatrh7frp9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE7Ql4tq4R2BcYwtYSgEbEdB4h_fR-Ydo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
