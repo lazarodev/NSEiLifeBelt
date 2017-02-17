@@ -61,21 +61,29 @@ public class CarsFragment extends AbstractStep implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_00_cars:
+                btn00.setBackgroundResource(R.color.colorPrimary);
+                btn00.setTextColor(getResources().getColor(R.color.white));
                 cars = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_01_cars:
+                btn01.setBackgroundResource(R.color.colorPrimary);
+                btn01.setTextColor(getResources().getColor(R.color.white));
                 cars = 32;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_02_cars:
+                btn02.setBackgroundResource(R.color.colorPrimary);
+                btn02.setTextColor(getResources().getColor(R.color.white));
                 cars = 41;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_03_cars:
+                btn03.setBackgroundResource(R.color.colorPrimary);
+                btn03.setTextColor(getResources().getColor(R.color.white));
                 cars = 58;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

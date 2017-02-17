@@ -67,36 +67,50 @@ public class GTCarFragment extends AbstractStep implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_0_gtcar:
+                btn0.setBackgroundResource(R.color.colorPrimary);
+                btn0.setTextColor(getResources().getColor(R.color.white));
                 cars = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_1_gtcar:
+                btn1.setBackgroundResource(R.color.colorPrimary);
+                btn1.setTextColor(getResources().getColor(R.color.white));
                 cars = 750;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_2_gtcar:
+                btn2.setBackgroundResource(R.color.colorPrimary);
+                btn2.setTextColor(getResources().getColor(R.color.white));
                 cars = 1890;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_3_gtcar:
+                btn3.setBackgroundResource(R.color.colorPrimary);
+                btn3.setTextColor(getResources().getColor(R.color.white));
                 cars = 3174;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_4_gtcar:
+                btn4.setBackgroundResource(R.color.colorPrimary);
+                btn4.setTextColor(getResources().getColor(R.color.white));
                 cars = 4616;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_5_gtcar:
+                btn5.setBackgroundResource(R.color.colorPrimary);
+                btn5.setTextColor(getResources().getColor(R.color.white));
                 cars = 6025;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_6_gtcar:
+                btn6.setBackgroundResource(R.color.colorPrimary);
+                btn6.setTextColor(getResources().getColor(R.color.white));
                 cars = 7850;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

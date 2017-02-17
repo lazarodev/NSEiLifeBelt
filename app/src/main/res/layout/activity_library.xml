@@ -7,8 +7,18 @@
     android:orientation="vertical"
     tools:context="com.gt.dev.ilifebelt.nseilifebelt.activity.LibraryActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/tv_message_no_item_library"
+        android:text="Debes calcular tu nivel socio económico"
+        android:textSize="16sp"
+        android:visibility="invisible" />
+
     <ListView
         android:id="@+id/lv_library_result"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+
 </LinearLayout>

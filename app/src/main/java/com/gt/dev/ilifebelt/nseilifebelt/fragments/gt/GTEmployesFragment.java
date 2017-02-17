@@ -61,26 +61,36 @@ public class GTEmployesFragment extends AbstractStep implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_0_gtemployes:
+                btn0.setBackgroundResource(R.color.colorPrimary);
+                btn0.setTextColor(getResources().getColor(R.color.white));
                 employe = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_1_gtemployes:
+                btn1.setBackgroundResource(R.color.colorPrimary);
+                btn1.setTextColor(getResources().getColor(R.color.white));
                 employe = 950;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_2_gtemployes:
+                btn2.setBackgroundResource(R.color.colorPrimary);
+                btn2.setTextColor(getResources().getColor(R.color.white));
                 employe = 2500;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_3_gtemployes:
+                btn3.setBackgroundResource(R.color.colorPrimary);
+                btn3.setTextColor(getResources().getColor(R.color.white));
                 employe = 4155;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_4_gtemployes:
+                btn4.setBackgroundResource(R.color.colorPrimary);
+                btn4.setTextColor(getResources().getColor(R.color.white));
                 employe = 6560;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

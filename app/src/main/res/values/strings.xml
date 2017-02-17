@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">iLifeBelt NSEx</string>
+    <string name="app_name">iLifebelt NSEx</string>
     <string name="title_activity_main">MainActivity</string>
 
     // Questions and description for the fragments
@@ -31,7 +31,7 @@
     <string name="diploma_master">Diplomado o maestría</string>
     <string name="doctor">Doctorado</string>
 
-    <string name="nse_title_result">Tu nivel socio economico es:</string>
+    <string name="nse_title_result">Tu nivel socio económico es:</string>
 
     <string name="about_ilifebelt_text">iLifebelt es una organización que brinda servicios de marketing digital
         e investigación de mercados independiente a gobiernos, partidos políticos o cualquier otra organización

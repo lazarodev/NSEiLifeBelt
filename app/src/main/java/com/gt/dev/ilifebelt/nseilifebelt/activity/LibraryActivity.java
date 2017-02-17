@@ -2,11 +2,13 @@ package com.gt.dev.ilifebelt.nseilifebelt.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.activeandroid.query.Select;
 import com.google.android.gms.analytics.Tracker;
@@ -30,6 +32,7 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
     private String name;
     private LibraryAdapter adapter;
     private MyApplication myApp;
+    private TextView tvNoItem;
     private Tracker mTracker;
 
     @Override
@@ -40,11 +43,18 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Lista de resultados");
 
+        tvNoItem = (TextView) findViewById(R.id.tv_message_no_item_library);
         lvResults = (ListView) findViewById(R.id.lv_library_result);
         lvResults.setOnItemClickListener(this);
+
         showInventorylist();
 
         startAnalytics();
+    }
+
+    private void showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Para ver los resultados debes al menos registrar un resultado del calculo de nivel socio económico").show();
     }
 
     private void startAnalytics() {
@@ -70,7 +80,15 @@ public class LibraryActivity extends AppCompatActivity implements AdapterView.On
         //creating own adapter
         adapter = new LibraryAdapter(inventoryItems, this);
         //adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, inventoryItems);
-        lvResults.setAdapter(adapter);
+        //lvResults.setAdapter(adapter);
+
+        // validacion barbara
+        if (adapter.getCount() != 0) {
+            lvResults.setAdapter(adapter);
+        } else {
+            showDialog();
+            tvNoItem.setVisibility(View.VISIBLE);
+        }
 
         updateList();
     }

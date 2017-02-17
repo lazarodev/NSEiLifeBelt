@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.github.fcannizzaro.materialstepper.AbstractStep;
 import com.gt.dev.ilifebelt.nseilifebelt.R;
-import com.gt.dev.ilifebelt.nseilifebelt.activity.NSEActivity;
 
 /**
  * Created by Community on 27/10/16.
@@ -81,37 +80,51 @@ public class RoomFragment extends AbstractStep implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_01_room:
+                btn1.setBackgroundResource(R.color.colorPrimary);
+                btn1.setTextColor(getResources().getColor(R.color.white));
                 onNext();
                 room = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_02_room:
+                btn2.setBackgroundResource(R.color.colorPrimary);
+                btn2.setTextColor(getResources().getColor(R.color.white));
                 room = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_03_room:
+                btn3.setBackgroundResource(R.color.colorPrimary);
+                btn3.setTextColor(getResources().getColor(R.color.white));
                 room = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_04_room:
+                btn4.setBackgroundResource(R.color.colorPrimary);
+                btn4.setTextColor(getResources().getColor(R.color.white));
                 room = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_05_room:
+                btn5.setBackgroundResource(R.color.colorPrimary);
+                btn5.setTextColor(getResources().getColor(R.color.white));
                 room = 8;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_06_room:
+                btn6.setBackgroundResource(R.color.colorPrimary);
+                btn6.setTextColor(getResources().getColor(R.color.white));
                 room = 8;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_07_room:
+                btn7.setBackgroundResource(R.color.colorPrimary);
+                btn7.setTextColor(getResources().getColor(R.color.white));
                 room = 14;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

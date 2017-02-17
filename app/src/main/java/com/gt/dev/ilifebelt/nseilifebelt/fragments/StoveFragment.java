@@ -57,11 +57,15 @@ public class StoveFragment extends AbstractStep implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_yes_stove:
+                btnYes.setBackgroundResource(R.color.colorPrimary);
+                btnYes.setTextColor(getResources().getColor(R.color.white));
                 stove = 20;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_no_stove:
+                btnNo.setBackgroundResource(R.color.colorPrimary);
+                btnNo.setTextColor(getResources().getColor(R.color.white));
                 stove = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

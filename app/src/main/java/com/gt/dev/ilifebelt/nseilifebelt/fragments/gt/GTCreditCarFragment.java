@@ -56,11 +56,15 @@ public class GTCreditCarFragment extends AbstractStep implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_si_gtcreditcard:
+                btnYes.setBackgroundResource(R.color.colorPrimary);
+                btnYes.setTextColor(getResources().getColor(R.color.white));
                 credit = 948;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_no_gtcreditcard:
+                btnNo.setBackgroundResource(R.color.colorPrimary);
+                btnNo.setTextColor(getResources().getColor(R.color.white));
                 credit = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

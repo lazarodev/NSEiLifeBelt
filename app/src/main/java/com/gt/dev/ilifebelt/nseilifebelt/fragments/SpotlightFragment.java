@@ -63,26 +63,36 @@ public class SpotlightFragment extends AbstractStep implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_05_spot:
+                btn05Spot.setBackgroundResource(R.color.colorPrimary);
+                btn05Spot.setTextColor(getResources().getColor(R.color.white));
                 spotligth = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_610_spot:
+                btn0610Spot.setBackgroundResource(R.color.colorPrimary);
+                btn0610Spot.setTextColor(getResources().getColor(R.color.white));
                 spotligth = 15;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_1115_spot:
+                btn1115Spot.setBackgroundResource(R.color.colorPrimary);
+                btn1115Spot.setTextColor(getResources().getColor(R.color.white));
                 spotligth = 27;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_1620_spot:
+                btn1620Spot.setBackgroundResource(R.color.colorPrimary);
+                btn1620Spot.setTextColor(getResources().getColor(R.color.white));
                 spotligth = 32;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_21_spot:
+                btn21Spot.setBackgroundResource(R.color.colorPrimary);
+                btn21Spot.setTextColor(getResources().getColor(R.color.white));
                 spotligth = 46;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

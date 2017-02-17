@@ -20,6 +20,7 @@ public class GTHomeBreakFragment extends AbstractStep implements View.OnClickLis
     private Button btnYes, btnNo;
     private int click;
     public static int homebreak;
+    int whiteColor = R.color.white;
 
     @Nullable
     @Override
@@ -55,11 +56,15 @@ public class GTHomeBreakFragment extends AbstractStep implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_si_homebreak:
+                btnYes.setBackgroundResource(R.color.colorPrimary);
+                btnYes.setTextColor(getResources().getColor(R.color.white));
                 homebreak = 944;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_no_gthomebreak:
+                btnNo.setBackgroundResource(R.color.colorPrimary);
+                btnNo.setTextColor(getResources().getColor(R.color.white));
                 homebreak = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

@@ -65,24 +65,34 @@ public class BathFragment extends AbstractStep implements View.OnClickListener {
                 onNext();
                 bath = 0;
                 click++;
+                btn0.setBackgroundResource(R.color.colorPrimary);
+                btn0.setTextColor(getResources().getColor(R.color.white));
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_01_bath:
+                btn1.setBackgroundResource(R.color.colorPrimary);
+                btn1.setTextColor(getResources().getColor(R.color.white));
                 bath = 16;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_02_bath:
+                btn2.setBackgroundResource(R.color.colorPrimary);
+                btn2.setTextColor(getResources().getColor(R.color.white));
                 bath = 36;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_03_bath:
+                btn3.setBackgroundResource(R.color.colorPrimary);
+                btn3.setTextColor(getResources().getColor(R.color.white));
                 bath = 36;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_04_bath:
+                btn4.setBackgroundResource(R.color.colorPrimary);
+                btn4.setTextColor(getResources().getColor(R.color.white));
                 bath = 52;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

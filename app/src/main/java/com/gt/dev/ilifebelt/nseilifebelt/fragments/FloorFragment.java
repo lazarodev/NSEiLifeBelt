@@ -60,11 +60,15 @@ public class FloorFragment extends AbstractStep implements View.OnClickListener 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_yes_floor:
+                btnYesFloor.setBackgroundResource(R.color.colorPrimary);
+                btnYesFloor.setTextColor(getResources().getColor(R.color.white));
                 floor = 11;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_no_floor:
+                btnNoFloor.setBackgroundResource(R.color.colorPrimary);
+                btnNoFloor.setTextColor(getResources().getColor(R.color.white));
                 floor = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

@@ -64,7 +64,7 @@ public class GTResultActivity extends AppCompatActivity implements View.OnClickL
         result.email = email;
         result.nse = resultNSE;
         result.save();
-        Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Resultado guardado", Toast.LENGTH_SHORT).show();
         finish();
     }
 

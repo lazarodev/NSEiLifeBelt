@@ -55,11 +55,15 @@ public class GTSecadoraFragment extends AbstractStep implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_si_gtsecadora:
+                btnYes.setBackgroundResource(R.color.colorPrimary);
+                btnYes.setTextColor(getResources().getColor(R.color.white));
                 secadora = 2643;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_no_gtsecadora:
+                btnNo.setBackgroundResource(R.color.colorPrimary);
+                btnNo.setTextColor(getResources().getColor(R.color.white));
                 secadora = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

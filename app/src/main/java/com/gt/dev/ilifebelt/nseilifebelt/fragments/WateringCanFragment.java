@@ -57,11 +57,15 @@ public class WateringCanFragment extends AbstractStep implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_yes_water:
+                btnYes.setBackgroundResource(R.color.colorPrimary);
+                btnYes.setTextColor(getResources().getColor(R.color.white));
                 watering = 10;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_no_water:
+                btnNo.setBackgroundResource(R.color.colorPrimary);
+                btnNo.setTextColor(getResources().getColor(R.color.white));
                 watering = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

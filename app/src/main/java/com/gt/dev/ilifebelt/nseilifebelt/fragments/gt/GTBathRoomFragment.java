@@ -62,31 +62,44 @@ public class GTBathRoomFragment extends AbstractStep implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_0_gtbath:
+                btn0.setBackgroundResource(R.color.colorPrimary);
+                btn0.setTextColor(getResources().getColor(R.color.white));
                 bath = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_01_gtbath:
+                btn1.setBackgroundResource(R.color.colorPrimary);
+                btn1.setTextColor(getResources().getColor(R.color.white));
                 bath = 250;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_2_gtbath:
+                btn2.setBackgroundResource(R.color.colorPrimary);
+                btn2.setTextColor(getResources().getColor(R.color.white));
                 bath = 500;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
+                btn0.setTextColor(getResources().getColor(R.color.white));
                 break;
             case R.id.btn_3_gtbath:
+                btn3.setBackgroundResource(R.color.colorPrimary);
+                btn3.setTextColor(getResources().getColor(R.color.white));
                 bath = 1050;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_4_gtbath:
+                btn4.setBackgroundResource(R.color.colorPrimary);
+                btn4.setTextColor(getResources().getColor(R.color.white));
                 bath = 1400;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_5_gtbath:
+                btn5.setBackgroundResource(R.color.colorPrimary);
+                btn5.setTextColor(getResources().getColor(R.color.white));
                 bath = 2250;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

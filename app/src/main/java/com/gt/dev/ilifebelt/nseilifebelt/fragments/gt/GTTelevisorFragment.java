@@ -48,6 +48,11 @@ public class GTTelevisorFragment extends AbstractStep implements View.OnClickLis
     }
 
     @Override
+    public boolean nextIf() {
+        return click > 0;
+    }
+
+    @Override
     public String error() {
         return getString(R.string.validate_click);
     }
@@ -56,26 +61,36 @@ public class GTTelevisorFragment extends AbstractStep implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_0_gttv:
+                btn0.setBackgroundResource(R.color.colorPrimary);
+                btn0.setTextColor(getResources().getColor(R.color.white));
                 tv = 0;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_1_gttv:
+                btn1.setBackgroundResource(R.color.colorPrimary);
+                btn1.setTextColor(getResources().getColor(R.color.white));
                 tv = 145;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_2_gttv:
+                btn2.setBackgroundResource(R.color.colorPrimary);
+                btn2.setTextColor(getResources().getColor(R.color.white));
                 tv = 290;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_3_gttv:
+                btn3.setBackgroundResource(R.color.colorPrimary);
+                btn3.setTextColor(getResources().getColor(R.color.white));
                 tv = 435;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btn_4_gttv:
+                btn4.setBackgroundResource(R.color.colorPrimary);
+                btn4.setTextColor(getResources().getColor(R.color.white));
                 tv = 580;
                 click++;
                 Toast.makeText(mStepper, "Puedes continuar", Toast.LENGTH_SHORT).show();

@@ -37,11 +37,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toolbar = (Toolbar) findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setIcon(R.drawable.ilifebelt_nse_01_120px);
+
         // Seteamos el titulo de la app
-        getSupportActionBar().setTitle("iLifeBelt NSE");
+        getSupportActionBar().setTitle(getString(R.string.app_name));
 
         // Seteamos el subtitulo de la app
-        getSupportActionBar().setSubtitle("Nivel Socio-Económico");
+        getSupportActionBar().setSubtitle("Calculo De Nivel Socio-Económico");
 
         startVars();
 
