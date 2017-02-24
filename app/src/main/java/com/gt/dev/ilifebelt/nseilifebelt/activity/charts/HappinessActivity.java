@@ -26,7 +26,7 @@ public class HappinessActivity extends AppCompatActivity {
     private PieChart mChart;
 
     private int[] yValues = {54, 37, 9};
-    private String[] xValues = {"Es muy feliz", "Es razonablemente fleiz", "Es infeliz"};
+    private String[] xValues = {"Es muy feliz", "Es razonablemente feliz", "Es infeliz"};
 
     private MyApplication myApp;
     private Tracker mTracker;

@@ -31,7 +31,7 @@ public class LowStatusFragment extends Fragment {
     private PieChart mChart;
 
     private int[] yValues = {58, 01, 41};
-    private String[] xValues = {"Evangénlico", "Otras", "Católico"};
+    private String[] xValues = {"Evangélico", "Otras", "Católico"};
 
     public static final int[] MY_COLORS = {
             Color.rgb(84, 124, 101), Color.rgb(64, 64, 64), Color.rgb(153, 19, 0),

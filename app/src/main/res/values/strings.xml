@@ -113,7 +113,7 @@
     <string name="title_activity_contact">ContactActivity</string>
 
     <string name="gt_bathroom_question">¿Cuántos baños tiene su casa, y de estos cuántos con regadera?</string>
-    <string name="gt_livingroom_question">¿Tiene sala familiar independiente a la sala familiar independiente?</string>
+    <string name="gt_livingroom_question">¿Tiene sala independiente a la sala familiar?</string>
     <string name="gt_employes_question">¿Cuántos empleados tiene para los quehaceres de la casa?</string>
     <string name="gt_car_question">¿Cuantos automóviles tiene?</string>
     <string name="gt_televisor_question">¿Cuanto televisores tiene?</string>
